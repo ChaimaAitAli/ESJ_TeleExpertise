@@ -1,5 +1,7 @@
-import "@styles/global.css";
-import Nav from "@components/Nav";
+import "../assets/css/style.css";
+import "../assets/css/bootstrap.min.css";
+import "../assets/css/feather.css";
+import Header from "../components/Header";
 export const metadeta = {
   title: "TéléExpertise",
   description:
@@ -8,11 +10,9 @@ export const metadeta = {
 const Rootlayout = ({ children }) => {
   return (
     <html>
+      <Header />
       <body>
-        <main>
-          <Nav />
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );
