@@ -13,12 +13,13 @@ import {
   noteicon1,
 } from "./imagepath";
 import Image from "next/image";
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 const Header = () => {
 
-  useEffect(() => {
+  /* useEffect(() => {
     require('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
+  }, []); */
   
   const handlesidebar = () => {
     document.body.classList.toggle("mini-sidebar");
@@ -27,7 +28,7 @@ const Header = () => {
   const handlesidebarmobilemenu = () => {
     document.body.classList.toggle("slide-nav");
     document.getElementsByTagName("html")[0].classList.toggle("menu-opened");
-    document
+    documentChaimaAitAli
       .getElementsByClassName("sidebar-overlay")[0]
       .classList.toggle("opened");
   };
@@ -46,7 +47,7 @@ const Header = () => {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
       } else {
-        if (document.exitFullscreen) {
+        if (document.exitChaimaAitAliFullscreen) {
           document.exitFullscreen();
         }
       }
