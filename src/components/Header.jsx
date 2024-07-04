@@ -12,8 +12,14 @@ import {
   settingicon01,
   noteicon1,
 } from "./imagepath";
+import Image from "next/image";
 
 const Header = () => {
+
+  useEffect(() => {
+    require('bootstrap/dist/js/bootstrap.bundle.min.js');
+  }, []);
+  
   const handlesidebar = () => {
     document.body.classList.toggle("mini-sidebar");
   };
@@ -58,12 +64,12 @@ const Header = () => {
       <div className="header">
         <div className="header-left">
           <Link href="/" className="logo">
-            <img src={logo} width={35} height={35} alt="" />{" "}
+            <Image src={logo} width={35} height={35} alt="" />{" "}
             <span>Pre Clinic</span>
           </Link>
         </div>
         <Link href="/" id="toggle_btn" onClick={handlesidebar}>
-          <img src={baricon} alt="" />
+          <Image src={baricon} alt="" />
         </Link>
         <Link
           href="/"
@@ -71,7 +77,7 @@ const Header = () => {
           className="mobile_btn float-start"
           onClick={handlesidebarmobilemenu}
         >
-          <img src={baricon1} alt="" />
+          <Image src={baricon1} alt="" />
         </Link>
         <div className="top-nav-search mob-view">
           <form>
@@ -81,7 +87,7 @@ const Header = () => {
               placeholder="Search here"
             />
             <Link href="/" className="btn">
-              <img src={searchnormal} alt="" />
+              <Image src={searchnormal} alt="" />
             </Link>
           </form>
         </div>
@@ -92,7 +98,7 @@ const Header = () => {
               className="dropdown-toggle nav-link"
               data-bs-toggle="dropdown"
             >
-              <img src={noteicon} alt="" />
+              <Image src={noteicon} alt="" />
               <span className="pulse" />{" "}
             </Link>
             <div className="dropdown-menu notifications">
@@ -223,7 +229,7 @@ const Header = () => {
               id="open_msg_box"
               className="hasnotifications nav-link"
             >
-              <img src={noteicon1} alt="" />
+              <Image src={noteicon1} alt="" />
               <span className="pulse" />{" "}
             </Link>
           </li>
@@ -237,9 +243,10 @@ const Header = () => {
                 <h5>Liam Michael </h5>
                 <span>Admin</span>
               </div>
-              <span className="user-img">
-                <img src={user06} alt="Admin" />
-              </span>
+              {/* <span className="user-img">
+                <Image src={user06} alt="Admin"/>
+              </span> */}
+              <Image src={user06} alt="Admin" className="user-img"/>
             </Link>
             <div className="dropdown-menu">
               <Link href="/" className="dropdown-item">
@@ -258,7 +265,7 @@ const Header = () => {
           </li>
           <li className="nav-item ">
             <Link href="/" className="hasnotifications nav-link">
-              <img src={settingicon01} alt="" />{" "}
+              <Image src={settingicon01} alt="" />{" "}
             </Link>
           </li>
         </ul>

@@ -6,7 +6,7 @@ Version      : 1.0
 
 /*============================
  [Table of CSS]
-
+user-profile-list
 1. General
 2. Table
 3. Helper Class
@@ -764,6 +764,7 @@ textarea.form-control {
   display: flex;
   height: 70px;
   justify-content: flex-start;
+  text-decoration: none; 
 }
 .logo span {
   color: #2e37a4;
@@ -813,6 +814,9 @@ textarea.form-control {
 .user-img {
   display: inline-block;
   position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
 }
 .header .user-img img {
   width: 40px;
@@ -939,6 +943,7 @@ textarea.form-control {
 }
 .user-menu.nav li.user-profile-list a {
   line-height: 20px;
+  font-size: 13px;
 }
 .user-names {
   padding-right: 10px;
@@ -5377,7 +5382,7 @@ a.fc-event:not([href]) {
   margin: 0;
   font-size: 14px;
   font-weight: normal;
-  line-height: 1.45;
+  line-height: 1;
   color: #616161;
 }
 .notifications .notification-time {
@@ -5401,6 +5406,7 @@ a.fc-event:not([href]) {
   display: block;
   padding: 12px;
   border-radius: 2px;
+  text-decoration: none;
 }
 .notifications ul.notification-list > li a:hover {
   background-color: #fafafa;
@@ -5441,6 +5447,7 @@ a.fc-event:not([href]) {
 .noti-details {
   color: #989c9e;
   margin: 0;
+  font-size: 14px;
 }
 .noti-time {
   margin: 0;
@@ -5643,6 +5650,11 @@ html.menu-opened body {
   list-style: none;
   padding-left: 0;
 }
+
+.list-box a {
+  text-decoration: none;
+}
+
 .list-item.new-message {
   background-color: rgba(0, 0, 0, 0.2);
 }

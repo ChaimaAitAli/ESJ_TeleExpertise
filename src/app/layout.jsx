@@ -10,8 +10,8 @@ export const metadeta = {
 const Rootlayout = ({ children }) => {
   return (
     <html>
-      <Header />
       <body>
+        <Header />
         <main>{children}</main>
       </body>
     </html>
