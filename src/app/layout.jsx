@@ -1,20 +1,41 @@
 import "../assets/css/style.css";
+import "../assets/css/font-awesome.min.css";
 import "../assets/css/bootstrap.min.css";
-import "../assets/css/feather.css";
 import Header from "../components/Header";
-export const metadeta = {
+
+export const metadata = {
   title: "TéléExpertise",
   description:
     "Connecter les médecins pour des soins meilleurs et plus rapides",
 };
-const Rootlayout = ({ children }) => {
+
+const RootLayout = ({ children }) => {
   return (
-    <html>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <link rel="icon" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" />
+        <script
+          src="https://kit.fontawesome.com/a790242b27.js"
+          crossOrigin="anonymous"
+        ></script>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+        />
+        <title>{metadata.title}</title>
+      </head>
       <body>
-        <Header />
-        <main>{children}</main>
+        <div id="root">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );
 };
-export default Rootlayout;
+
+export default RootLayout;

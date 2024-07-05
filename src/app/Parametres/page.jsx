@@ -1,16 +1,11 @@
-import "../assets/css/style.css";
-import "../assets/css/bootstrap.min.css";
-import "../assets/css/font-awesome.min.css";
-import "../assets/css/feather.css";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Sidebar from "@components/Sidebar";
+import "@assets/css/style.css";
 import Link from "next/link";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
-import Sidebar from "../components/Sidebar";
-
-const Home = () => {
+const Parametres = () => {
   return (
     <>
-      <Sidebar activeClassName="dashboard" />
+      <Sidebar activeClassName="parametres" />
       <>
         <div className="page-wrapper">
           <div className="content">
@@ -25,7 +20,7 @@ const Home = () => {
                     <li className="breadcrumb-item">
                       <FeatherIcon icon="chevron-right" />
                     </li>
-                    <li className="breadcrumb-item active">tableau de bord</li>
+                    <li className="breadcrumb-item active">Paramètres</li>
                   </ul>
                 </div>
               </div>
@@ -37,4 +32,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Parametres;

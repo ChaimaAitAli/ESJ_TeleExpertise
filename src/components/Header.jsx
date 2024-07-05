@@ -13,14 +13,13 @@ import {
   noteicon1,
 } from "./imagepath";
 import Image from "next/image";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const Header = () => {
-
   /* useEffect(() => {
     require('bootstrap/dist/js/bootstrap.bundle.min.js');
   }, []); */
-  
+
   const handlesidebar = () => {
     document.body.classList.toggle("mini-sidebar");
   };
@@ -247,7 +246,7 @@ const Header = () => {
               {/* <span className="user-img">
                 <Image src={user06} alt="Admin"/>
               </span> */}
-              <Image src={user06} alt="Admin" className="user-img"/>
+              <Image src={user06} alt="Admin" className="user-img" />
             </Link>
             <div className="dropdown-menu">
               <Link href="/" className="dropdown-item">
