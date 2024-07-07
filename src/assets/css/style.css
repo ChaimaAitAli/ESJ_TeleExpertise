@@ -11205,5 +11205,149 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   top: 26%;
 }
 .sidebar .logout-btn {
-  margin-top: auto; /* Ensures the logout button is at the bottom */
+  margin-top: auto;
+}
+
+/* Discussions Styling */
+.discussion-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.discussion-item {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: 2.5%;
+  padding: 20px;
+  background-color: #fff;
+  color: #2f38a3;
+  border-radius: 50px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.doctor-info {
+  margin-left: 5px;
+}
+
+.discussion-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.discussion-header img,
+.discussion-header .initials {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #03d2c5;
+  color: #fff;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.discussion-header .doctor-info {
+  flex-grow: 1;
+}
+
+.discussion-header .doctor-info h4 {
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: bolder;
+  color: #2f38a3;
+}
+
+.discussion-header .doctor-info p {
+  margin: 0;
+  font-size: 15px;
+  color: #bdc0e3;
+}
+
+.divider {
+  border: none;
+  border-top: 3px solid #e8e8e8;
+  margin: 20px 0;
+  width: 100%;
+}
+.discussion-body {
+  margin-left: 20px;
+}
+.discussion-body h5 {
+  margin-bottom: 15px;
+  font-size: 23px;
+  color: #2f38a3;
+  font-weight: bold;
+}
+
+.discussion-body p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #bdc0e3;
+  font-weight: 600;
+}
+
+.discussion-body .date,
+.discussion-body .time {
+  color: #21c6b7;
+  font-weight: bold;
+}
+.join-button {
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #2f38a3;
+  color: #fff;
+  border-radius: 25px;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-left: 75%;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.join-button:hover {
+  background-color: #00d3c7;
+  color: white;
+}
+
+/* Create button*/
+.button-creation {
+  border-color: #2f38a3;
+  background-color: #2f38a3;
+  border-radius: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .buttons-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .discussion-item {
+    width: 90%;
+    margin: 5% auto;
+    display: block;
+  }
+
+  .button-creation {
+    width: 50%;
+    margin-top: 10px;
+  }
+
+  .topSection {
+    margin-top: 0px;
+  }
 }
