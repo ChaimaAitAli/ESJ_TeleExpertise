@@ -1,5 +1,7 @@
-import Sidebar from "@components/Sidebar";
+"use client";
 import "@assets/css/style.css";
+import { useEffect, useState } from "react";
+import Sidebar from "@components/Sidebar";
 import Link from "next/link";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 const Chat = () => {

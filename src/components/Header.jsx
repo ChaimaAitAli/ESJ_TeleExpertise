@@ -16,9 +16,9 @@ import Image from "next/image";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const Header = () => {
-  /* useEffect(() => {
-    require('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []); */
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
   const handlesidebar = () => {
     document.body.classList.toggle("mini-sidebar");
@@ -27,7 +27,7 @@ const Header = () => {
   const handlesidebarmobilemenu = () => {
     document.body.classList.toggle("slide-nav");
     document.getElementsByTagName("html")[0].classList.toggle("menu-opened");
-    documentChaimaAitAli
+    document
       .getElementsByClassName("sidebar-overlay")[0]
       .classList.toggle("opened");
   };
@@ -68,11 +68,11 @@ const Header = () => {
             <span>Pre Clinic</span>
           </Link>
         </div>
-        <Link href="/" id="toggle_btn" onClick={handlesidebar}>
+        <Link href="#" id="toggle_btn" onClick={handlesidebar}>
           <Image src={baricon} alt="" />
         </Link>
         <Link
-          href="/"
+          href="#"
           id="mobile_btn"
           className="mobile_btn float-start"
           onClick={handlesidebarmobilemenu}
@@ -534,6 +534,13 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        @media only screen and (max-width: 768px) {
+          .header-left {
+            margin-left: -100px;
+          }
+        }
+      `}</style>
     </div>
   );
 };

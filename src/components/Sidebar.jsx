@@ -9,26 +9,6 @@ import Scrollbars from "react-custom-scrollbars-2";
 const Sidebar = (props) => {
   const [sidebar, setSidebar] = useState("");
 
-  useEffect(() => {
-    if (props?.id && props?.id1) {
-      const ele = document.getElementById(props.id);
-      handleClick({ target: ele }, props.id, props.id1);
-    }
-  }, [props?.id, props?.id1]);
-
-  const handleClick = (e, item, item1) => {
-    const div = document.getElementById(item);
-    const ulDiv = document.querySelector(`.${item1}`);
-
-    if (e.target.classList.contains("subdrop")) {
-      ulDiv.style.display = "none";
-      div.classList.remove("subdrop");
-    } else {
-      ulDiv.style.display = "block";
-      div.classList.add("subdrop");
-    }
-  };
-
   const expandMenu = () => {
     document.body.classList.remove("expand-menu");
   };
@@ -65,22 +45,12 @@ const Sidebar = (props) => {
                     props?.activeClassName === "dashboard" ? "active" : ""
                   }
                   href="/"
-                  id="menu-item"
-                  onClick={(e) => {
-                    handleClick(e, "menu-item", "menu-items");
-                  }}
                 >
                   <span className="menu-side">
                     <Image src={dashboard} alt="" />
                   </span>{" "}
                   <span> Page d'accueil </span>
                 </Link>
-                <ul
-                  style={{
-                    display: sidebar === "Dashboard" ? "block" : "none",
-                  }}
-                  className="menu-items"
-                ></ul>
               </li>
               <li className="submenu">
                 <Link
@@ -88,22 +58,12 @@ const Sidebar = (props) => {
                     props?.activeClassName === "doctors" ? "active" : ""
                   }
                   href="/Medecins"
-                  id="menu-item1"
-                  onClick={(e) => {
-                    handleClick(e, "menu-item1", "menu-items1");
-                  }}
                 >
                   <span className="menu-side">
                     <Image src={doctor} alt="" />
                   </span>{" "}
                   <span> Médecins </span>
                 </Link>
-                <ul
-                  style={{
-                    display: sidebar === "Doctors" ? "block" : "none",
-                  }}
-                  className="menu-items1"
-                ></ul>
               </li>
               <li>
                 <Link

@@ -1,14 +1,11 @@
 "use client";
-import "../assets/css/style.css";
-import "../assets/css/bootstrap.min.css";
-import "../assets/css/font-awesome.min.css";
-import "../assets/css/feather.css";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "@assets/css/style.css";
 import Link from "next/link";
 import Image from "next/image";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import Sidebar from "../components/Sidebar";
 import { morning_img_02 } from "@components/imagepath";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Discussion from "../components/Discussion";
 
@@ -58,7 +55,12 @@ const discussions = [
 ];
 
 const Home = () => {
+  const router = useRouter();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  const handleCreateDiscussion = () => {
+    router.push("/Formulaire");
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,7 +74,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div id="root">
       <Sidebar activeClassName="dashboard" />
       <div className="page-wrapper">
         <div className="content">
@@ -101,6 +103,7 @@ const Home = () => {
             {!isSmallScreen && (
               <div className="buttons-section text-end mb-4">
                 <button
+                  onClick={handleCreateDiscussion}
                   type="button"
                   className="btn btn-primary me-1 button-creation"
                   style={{
@@ -138,6 +141,7 @@ const Home = () => {
           {isSmallScreen && (
             <div className="buttons-section text-center mb-4">
               <button
+                onClick={handleCreateDiscussion}
                 type="button"
                 className="btn btn-primary button-creation"
                 style={{
@@ -173,7 +177,7 @@ const Home = () => {
           {/* Discussion Section */}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
