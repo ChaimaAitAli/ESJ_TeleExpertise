@@ -16,6 +16,162 @@ import {
 import Image from "next/image";
 
 const Header = () => {
+  const messages = [
+    {
+      id: 1,
+      avatar: "R",
+      author: "Richard Miles",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 2,
+      avatar: "J",
+      author: "John Doe",
+      time: "1 Aug",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+      newMessage: true,
+    },
+    {
+      id: 3,
+      avatar: "T",
+      author: "Tarah Shropshire",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 4,
+      avatar: "M",
+      author: "Mike Litorus",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 5,
+      avatar: "C",
+      author: "Catherine Manseau",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 6,
+      avatar: "D",
+      author: "Domenic Houston",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 7,
+      avatar: "B",
+      author: "Buster Wigton",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 8,
+      avatar: "R",
+      author: "Rolland Webber",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 9,
+      avatar: "C",
+      author: "Claire Mapes",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 10,
+      avatar: "M",
+      author: "Melita Faucher",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 11,
+      avatar: "J",
+      author: "Jeffery Lalor",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 12,
+      avatar: "L",
+      author: "Loren Gatlin",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+    {
+      id: 13,
+      avatar: "T",
+      author: "Tarah Shropshire",
+      time: "12:28 AM",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      href: "/",
+    },
+  ];
+
+  const notifications = [
+    {
+      id: 1,
+      avatar: "V",
+      user: "John Doe",
+      action: "added new task",
+      task: "Patient appointment booking",
+      time: "4 mins ago",
+      href: "/",
+    },
+    {
+      id: 2,
+      avatar: "V",
+      user: "Tarah Shropshire",
+      action: "changed the task name",
+      task: "Appointment booking with payment gateway",
+      time: "6 mins ago",
+      href: "/",
+    },
+    {
+      id: 3,
+      avatar: "L",
+      user: "Misty Tison",
+      action: "added",
+      task: "Doctor available module",
+      additional: ["Domenic Houston", "Claire Mapes"],
+      time: "8 mins ago",
+      href: "/",
+    },
+    {
+      id: 4,
+      avatar: "G",
+      user: "Rolland Webber",
+      action: "completed task",
+      task: "Patient and Doctor video conferencing",
+      time: "12 mins ago",
+      href: "/",
+    },
+    {
+      id: 5,
+      avatar: "V",
+      user: "Bernardo Galaviz",
+      action: "added new task",
+      task: "Private chat module",
+      time: "2 days ago",
+      href: "/",
+    },
+  ];
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
@@ -98,7 +254,7 @@ const Header = () => {
               className="dropdown-toggle nav-link"
               data-bs-toggle="dropdown"
             >
-              <Image src={noteicon} alt="" />
+              <Image src={noteicon1} alt="" />
               <span className="pulse" />{" "}
             </Link>
             <div className="dropdown-menu notifications">
@@ -107,114 +263,42 @@ const Header = () => {
               </div>
               <div className="drop-scroll">
                 <ul className="notification-list">
-                  <li className="notification-message">
-                    <Link href="/">
-                      <div className="media">
-                        <span className="avatar">V</span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">John Doe</span> added
-                            new task{" "}
-                            <span className="noti-title">
-                              Patient appointment booking
-                            </span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              4 mins ago
-                            </span>
-                          </p>
+                  {notifications.map((notification) => (
+                    <li key={notification.id} className="notification-message">
+                      <Link href={notification.href}>
+                        <div className="media">
+                          <span className="avatar">{notification.avatar}</span>
+                          <div className="media-body">
+                            <p className="noti-details">
+                              <span className="noti-title">
+                                {notification.user}
+                              </span>{" "}
+                              {notification.action}{" "}
+                              {notification.additional &&
+                                notification.additional.map((name, index) => (
+                                  <span key={index} className="noti-title">
+                                    {name}
+                                    {index <
+                                      notification.additional.length - 1 &&
+                                      " and "}
+                                  </span>
+                                ))}
+                              {notification.task && (
+                                <span className="noti-title">
+                                  {notification.task}
+                                </span>
+                              )}
+                            </p>
+                            <p className="noti-time">
+                              <span className="notification-time">
+                                {notification.time}
+                              </span>
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  </li>
-                  <li className="notification-message">
-                    <Link href="/">
-                      <div className="media">
-                        <span className="avatar">V</span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">Tarah Shropshire</span>{" "}
-                            changed the task name{" "}
-                            <span className="noti-title">
-                              Appointment booking with payment gateway
-                            </span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              6 mins ago
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
-                  <li className="notification-message">
-                    <Link href="/">
-                      <div className="media">
-                        <span className="avatar">L</span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">Misty Tison</span>{" "}
-                            added{" "}
-                            <span className="noti-title">Domenic Houston</span>{" "}
-                            and <span className="noti-title">Claire Mapes</span>{" "}
-                            to project{" "}
-                            <span className="noti-title">
-                              Doctor available module
-                            </span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              8 mins ago
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
-                  <li className="notification-message">
-                    <Link href="/">
-                      <div className="media">
-                        <span className="avatar">G</span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">Rolland Webber</span>{" "}
-                            completed task{" "}
-                            <span className="noti-title">
-                              Patient and Doctor video conferencing
-                            </span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              12 mins ago
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
-                  <li className="notification-message">
-                    <Link href="/">
-                      <div className="media">
-                        <span className="avatar">V</span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">Bernardo Galaviz</span>{" "}
-                            added new task{" "}
-                            <span className="noti-title">
-                              Private chat module
-                            </span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              2 days ago
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="topnav-dropdown-footer">
@@ -229,7 +313,7 @@ const Header = () => {
               id="open_msg_box"
               className="hasnotifications nav-link"
             >
-              <Image src={noteicon1} alt="" />
+              <Image src={noteicon} alt="" />
               <span className="pulse" />{" "}
             </Link>
           </li>
@@ -303,230 +387,29 @@ const Header = () => {
           </div>
           <div className="drop-scroll msg-list-scroll" id="msg_list">
             <ul className="list-box">
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">R</span>
+              {messages.map((message) => (
+                <li key={message.id}>
+                  <Link href={message.href}>
+                    <div
+                      className={`list-item ${
+                        message.newMessage ? "new-message" : ""
+                      }`}
+                    >
+                      <div className="list-left">
+                        <span className="avatar">{message.avatar}</span>
+                      </div>
+                      <div className="list-body">
+                        <span className="message-author">{message.author}</span>
+                        <span className="message-time">{message.time}</span>
+                        <div className="clearfix"></div>
+                        <span className="message-content">
+                          {message.content}
+                        </span>
+                      </div>
                     </div>
-                    <div className="list-body">
-                      <span className="message-author">Richard Miles </span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item new-message">
-                    <div className="list-left">
-                      <span className="avatar">J</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">John Doe</span>
-                      <span className="message-time">1 Aug</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">T</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author"> Tarah Shropshire </span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">M</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">Mike Litorus</span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">C</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">
-                        {" "}
-                        Catherine Manseau{" "}
-                      </span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">D</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author"> Domenic Houston </span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">B</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author"> Buster Wigton </span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">R</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author"> Rolland Webber </span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">C</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author"> Claire Mapes </span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">M</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">Melita Faucher</span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">J</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">Jeffery Lalor</span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">L</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">Loren Gatlin</span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">T</span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">Tarah Shropshire</span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix"></div>
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </li>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="topnav-dropdown-footer">
