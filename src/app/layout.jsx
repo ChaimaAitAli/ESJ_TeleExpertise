@@ -1,5 +1,5 @@
 import "@assets/css/style.css";
-import "../assets/css/bootstrap.min.css";
+import "@assets/css/bootstrap.min.css";
 import Header from "../components/Header";
 
 export const metadata = {
@@ -28,10 +28,8 @@ const RootLayout = ({ children }) => {
         <title>{metadata.title}</title>
       </head>
       <body>
-        <div id="root">
-          <Header />
-          {children}
-        </div>
+        <Header />
+        {children}
       </body>
     </html>
   );

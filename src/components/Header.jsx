@@ -1,4 +1,5 @@
 "use client";
+import "@assets/css/style.css";
 import Link from "next/link";
 import { useEffect } from "react";
 import {
@@ -13,7 +14,6 @@ import {
   noteicon1,
 } from "./imagepath";
 import Image from "next/image";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const Header = () => {
   useEffect(() => {
@@ -27,9 +27,9 @@ const Header = () => {
   const handlesidebarmobilemenu = () => {
     document.body.classList.toggle("slide-nav");
     document.getElementsByTagName("html")[0].classList.toggle("menu-opened");
-    document
+    /*document
       .getElementsByClassName("sidebar-overlay")[0]
-      .classList.toggle("opened");
+      .classList.toggle("opened");*/
   };
 
   const openDrawer = () => {

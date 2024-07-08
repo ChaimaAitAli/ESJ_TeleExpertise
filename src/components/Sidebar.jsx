@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "@assets/css/font-awesome.min.css";
 import Link from "next/link";
 import Image from "next/image";
 import { dashboard, doctor, logout, menuicon10, menuicon16 } from "./imagepath";
