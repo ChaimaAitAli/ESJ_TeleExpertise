@@ -11333,6 +11333,55 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   border-radius: 20px;
 }
 
+/*Formulaire*/
+.card-titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.custom-width-11-5 {
+  width: 97%;
+}
+
+.preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.file-preview {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: transparent;
+  border-radius: 5px;
+  flex-direction: column;
+}
+.file-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.file-link a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 5px;
+  text-decoration: none;
+  font-size: 10px;
+  color: black;
+  word-break: break-all;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .buttons-section {
