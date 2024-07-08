@@ -100,15 +100,20 @@ const Sidebar = (props) => {
                   <span>Paramètres</span>
                 </Link>
               </li>
+              <li>
+                <Link
+                  className={
+                    props?.activeClassName === "parametres" ? "active" : ""
+                  }
+                  href="/"
+                >
+                  <span className="menu-side">
+                    <Image src={logout} alt="" />
+                  </span>{" "}
+                  <span>Se Déconnecter</span>
+                </Link>
+              </li>
             </ul>
-          </div>
-          <div className="logout-btn">
-            <Link href="/">
-              <span className="menu-side">
-                <Image src={logout} alt="" />
-              </span>{" "}
-              <span>Se Déconnecter</span>
-            </Link>
           </div>
         </div>
       </Scrollbars>

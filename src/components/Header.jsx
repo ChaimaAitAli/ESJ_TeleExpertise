@@ -221,7 +221,7 @@ const Header = () => {
         <div className="header-left">
           <Link href="/" className="logo">
             <Image src={logo} width={35} height={35} alt="" />{" "}
-            <span>Pre Clinic</span>
+            <span>TéléExpertise</span>
           </Link>
         </div>
         <Link href="#" id="toggle_btn" onClick={handlesidebar}>
@@ -235,18 +235,7 @@ const Header = () => {
         >
           <Image src={baricon1} alt="" />
         </Link>
-        <div className="top-nav-search mob-view">
-          <form>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search here"
-            />
-            <Link href="/" className="btn">
-              <Image src={searchnormal} alt="" />
-            </Link>
-          </form>
-        </div>
+
         <ul className="nav user-menu float-end">
           <li className="nav-item dropdown d-none d-sm-block">
             <Link
@@ -325,7 +314,6 @@ const Header = () => {
             >
               <div className="user-names">
                 <h5>Liam Michael </h5>
-                <span>Admin</span>
               </div>
               {/* <span className="user-img">
                 <Image src={user06} alt="Admin"/>
@@ -348,7 +336,7 @@ const Header = () => {
             </div>
           </li>
           <li className="nav-item ">
-            <Link href="/" className="hasnotifications nav-link">
+            <Link href="/Parametres" className="hasnotifications nav-link">
               <Image src={settingicon01} alt="" />{" "}
             </Link>
           </li>
