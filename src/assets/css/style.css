@@ -11409,6 +11409,9 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.rounded-circle {
+  border-radius: 50%;
+}
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
