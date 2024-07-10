@@ -2,10 +2,10 @@ import Sidebar from "@components/Sidebar";
 import "@assets/css/style.css";
 import Link from "next/link";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
-const Parametres = () => {
+const Discussions = () => {
   return (
     <>
-      <Sidebar activeClassName="parametres" />
+      <Sidebar activeClassName="discussions" />
       <>
         <div className="page-wrapper">
           <div className="content">
@@ -20,7 +20,7 @@ const Parametres = () => {
                     <li className="breadcrumb-item">
                       <FeatherIcon icon="chevron-right" />
                     </li>
-                    <li className="breadcrumb-item active">Paramètres</li>
+                    <li className="breadcrumb-item active">Discussions</li>
                   </ul>
                 </div>
               </div>
@@ -32,4 +32,4 @@ const Parametres = () => {
   );
 };
 
-export default Parametres;
+export default Discussions;

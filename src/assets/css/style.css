@@ -11381,6 +11381,34 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   color: black;
   word-break: break-all;
 }
+/*To add for the next commit*/
+.remove-button {
+  position: absolute;
+  top: -7px;
+  border: none;
+  background-color: transparent;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.ant-form-item-label > label {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.form-item {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
@@ -11402,5 +11430,14 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 
   .topSection {
     margin-top: 0px;
+  }
+  .form-item {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .form-row {
+    flex-direction: column;
   }
 }

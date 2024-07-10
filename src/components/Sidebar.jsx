@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@assets/css/font-awesome.min.css";
 import Link from "next/link";
 import Image from "next/image";
-import { dashboard, doctor, logout, menuicon10, menuicon16 } from "./imagepath";
+import { dashboard, doctor, logout, menuicon10, menuicon08 } from "./imagepath";
 import Scrollbars from "react-custom-scrollbars-2";
 
 const Sidebar = (props) => {
@@ -53,6 +53,19 @@ const Sidebar = (props) => {
                   <span> Page d'accueil </span>
                 </Link>
               </li>
+              <li>
+                <Link
+                  className={
+                    props?.activeClassName === "discussions" ? "active" : ""
+                  }
+                  href="/Discussions"
+                >
+                  <span className="menu-side">
+                    <Image src={menuicon08} alt="" />
+                  </span>{" "}
+                  <span>Discussions</span>
+                </Link>
+              </li>
               <li className="submenu">
                 <Link
                   className={
@@ -85,19 +98,6 @@ const Sidebar = (props) => {
                   href="/Calendrier"
                 >
                   <i className="fa fa-calendar" /> <span>Calendrier</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={
-                    props?.activeClassName === "parametres" ? "active" : ""
-                  }
-                  href="/Parametres"
-                >
-                  <span className="menu-side">
-                    <Image src={menuicon16} alt="" />
-                  </span>{" "}
-                  <span>Paramètres</span>
                 </Link>
               </li>
               <li>

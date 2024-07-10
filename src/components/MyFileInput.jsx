@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import pdfIcon from "@assets/img/icons/pdf-icon.png";
 import docIcon from "@assets/img/icons/doc-icon.png";
+import removeIcon from "@assets/img/icons/remove-icon.png";
 
 const MyFileInput = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -29,6 +30,10 @@ const MyFileInput = () => {
       }
     }
     setSelectedFiles([...selectedFiles, ...new Set(validFiles)]);
+  };
+  const handleRemoveFile = (index) => {
+    const updatedFiles = selectedFiles.filter((_, i) => i !== index);
+    setSelectedFiles(updatedFiles);
   };
 
   const renderPreviews = () => {
@@ -59,6 +64,12 @@ const MyFileInput = () => {
             </a>
           </div>
         )}
+        <button
+          className="remove-button"
+          onClick={() => handleRemoveFile(index)}
+        >
+          <Image src={removeIcon} alt="Remove file" width={20} height={20} />
+        </button>
       </div>
     ));
   };
