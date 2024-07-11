@@ -295,7 +295,7 @@ const Header = () => {
               </div>
             </div>
           </li>
-          <li className="nav-item dropdown d-none d-sm-block">
+          {/* <li className="nav-item dropdown d-none d-sm-block">
             <Link
               href="/"
               onClick={openDrawer}
@@ -305,7 +305,7 @@ const Header = () => {
               <Image src={noteicon} alt="" />
               <span className="pulse" />{" "}
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item dropdown has-arrow user-profile-list">
             <Link
               href="/"
@@ -335,11 +335,11 @@ const Header = () => {
               </Link>
             </div>
           </li>
-          <li className="nav-item ">
+          {/* <li className="nav-item ">
             <Link href="/Parametres" className="hasnotifications nav-link">
               <Image src={settingicon01} alt="" />{" "}
             </Link>
-          </li>
+          </li> */}
         </ul>
         <div className="dropdown mobile-user-menu float-end">
           <Link
@@ -367,7 +367,8 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Notifications */}
+      {/* messages */}
+      {/*
       <div className="notification-box">
         <div className="msg-sidebar notifications msg-noti">
           <div className="topnav-dropdown-header">
@@ -404,7 +405,7 @@ const Header = () => {
             <Link href="/">See all messages</Link>
           </div>
         </div>
-      </div>
+      </div>*/}
       <style jsx>{`
         @media only screen and (max-width: 768px) {
           .header-left {
