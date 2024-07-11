@@ -11321,6 +11321,44 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   background-color: #00d3c7;
   color: white;
 }
+.buttons {
+  align-self: flex-end;
+  margin-top: 15px;
+}
+.accept-button {
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #55ce63;
+  color: #fff;
+  border-radius: 25px;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-right: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.accept-button:hover {
+  scale: 1.1;
+}
+
+.reject-button {
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #f62d51;
+  color: #fff;
+  border-radius: 25px;
+  align-self: flex-end;
+  margin-top: auto;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.reject-button:hover {
+  scale: 1.1;
+}
 
 .table {
   width: 100%;
@@ -11330,7 +11368,7 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 .table th,
 .table td {
   padding: 10px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -11376,6 +11414,11 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 .launch-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+.download-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /* Create button*/
