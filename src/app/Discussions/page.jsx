@@ -5,8 +5,9 @@ import "@assets/css/style.css";
 import Link from "next/link";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import DiscussionCree from "@/components/DiscussionCree";
+import DiscussionPlanifiee from "@components/DiscussionPlanifiee";
 
-const discussionsCree = [
+const discussionsCrees = [
   {
     id: 1,
     title: "Irritation cutanée",
@@ -36,6 +37,52 @@ const discussionsCree = [
     neededSpecialities: ["Urologue"],
     acceptedInvitations: ["Dr. Brown", "Dr. Smith"],
     rejectedInvitations: ["Dr. Green"],
+    date: "11/07/2024",
+    time: "12:10",
+  },
+  {
+    id: 4,
+    title: "Infection rare",
+    description:
+      "Discutons du cas d'un patient souffrant d'une irritation cutanée. Cette discussion abordera les causes potentielles.",
+    neededSpecialities: ["Urologue"],
+    acceptedInvitations: ["Dr. Brown", "Dr. Smith"],
+    rejectedInvitations: ["Dr. Green"],
+    date: "11/07/2024",
+    time: "12:10",
+  },
+];
+
+const discussionsPlanifiees = [
+  {
+    id: 1,
+    title: "Irritation cutanée",
+    MainDoctor: "Kawtar Debbar",
+    neededSpecialities: ["Dermatologue"],
+    date: "21/02/2024",
+    time: "21:00",
+  },
+  {
+    id: 2,
+    title: "Microbe dentaire",
+    MainDoctor: "Dr. Mourad Elbacha",
+    neededSpecialities: ["Dentiste"],
+    date: "21/08/2024",
+    time: "17:00",
+  },
+  {
+    id: 3,
+    title: "Infection rare",
+    MainDoctor: "Dr. Rachid Elhilali",
+    neededSpecialities: ["Dentiste"],
+    date: "11/07/2024",
+    time: "12:10",
+  },
+  {
+    id: 4,
+    title: "Infection rare",
+    MainDoctor: "Dr. Issam Elmissaoui",
+    neededSpecialities: ["Urologue"],
     date: "11/07/2024",
     time: "12:10",
   },
@@ -92,6 +139,15 @@ const Discussions = () => {
                       href="#solid-rounded-justified-tab3"
                       data-bs-toggle="tab"
                     >
+                      Terminées
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      href="#solid-rounded-justified-tab4"
+                      data-bs-toggle="tab"
+                    >
                       Invitations
                     </Link>
                   </li>
@@ -114,7 +170,7 @@ const Discussions = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {discussionsCree.map((discussion) => (
+                        {discussionsCrees.map((discussion) => (
                           <DiscussionCree
                             key={discussion.id}
                             title={discussion.title}
@@ -129,10 +185,36 @@ const Discussions = () => {
                     </table>
                   </div>
                   <div className="tab-pane" id="solid-rounded-justified-tab2">
-                    Tab content 2
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th>Titre</th>
+                          <th>Lancée Par</th>
+                          <th>Spécialités Demandées</th>
+                          <th>Date</th>
+                          <th>Heure</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {discussionsPlanifiees.map((discussion) => (
+                          <DiscussionPlanifiee
+                            key={discussion.id}
+                            title={discussion.title}
+                            MainDoctor={discussion.MainDoctor}
+                            neededSpecialities={discussion.neededSpecialities}
+                            date={discussion.date}
+                            time={discussion.time}
+                          />
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                   <div className="tab-pane" id="solid-rounded-justified-tab3">
-                    Tab content 3
+                    Terminées
+                  </div>
+                  <div className="tab-pane" id="solid-rounded-justified-tab3">
+                    Invitations
                   </div>
                 </div>
               </div>

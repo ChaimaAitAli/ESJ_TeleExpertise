@@ -11336,17 +11336,36 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 
 .table th {
   background-color: #f8f8f8;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
+}
+
+.table td {
+  font-size: 15px;
 }
 
 .discussion-cree-item {
   background-color: #fff;
 }
 
-.launch-button {
+.joindre-button {
   border: none;
   background-color: #2f38a3;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.joindre-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.launch-button {
+  border: none;
+  background-color: #03d2c5;
   color: #fff;
   padding: 8px 16px;
   border-radius: 25px;
