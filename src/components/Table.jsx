@@ -2,8 +2,12 @@
 import { React, useEffect, useState } from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@assets/css/font-awesome.min.css";
-
+import { useRouter } from "next/navigation";
 const Table = ({ columns, data }) => {
+  const router = useRouter();
+  const handleClick = (e) => {
+    router.push(`/Chat/${e}`);
+  };
   return (
     <table className="table table-hover">
       <thead>
@@ -23,17 +27,17 @@ const Table = ({ columns, data }) => {
                     <span>{row[column.accessor]}</span>
                   </div>
                 ) : column.accessor === "actions" ? (
-                  <button className="btn btn-link p-0">...</button>
+                  <button
+                    onClick={() => handleClick(row.name)}
+                    className="btn btn-primary btn-sm"
+                  >
+                    envoyer un message
+                  </button>
                 ) : (
                   row[column.accessor]
                 )}
               </td>
             ))}
-            <td>
-              <button className="btn btn-primary btn-sm">
-                envoyer un message
-              </button>
-            </td>{" "}
           </tr>
         ))}
       </tbody>

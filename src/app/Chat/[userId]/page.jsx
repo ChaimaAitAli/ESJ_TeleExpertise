@@ -27,6 +27,88 @@ const page = ({ params }) => {
       lastMessage: "Lorem ipsum dolor sit amet...",
       unreadCount: 3,
       active: true,
+      messages: [
+        {
+          id: 1,
+          type: "received",
+          avatar: Avatar5,
+          name: "Williams Bruk",
+          message:
+            "How likely are you to recommend our company to your friends and family?",
+          time: "06:00 PM, 30 Sep 2022",
+          attachments: [],
+        },
+        {
+          id: 2,
+          type: "sent",
+          avatar: null,
+          name: "",
+          message:
+            "How likely are you to recommend our company to your friends and family?",
+          time: "06:00 PM, 30 Sep 2022",
+          attachments: [],
+        },
+        {
+          id: 3,
+          type: "received",
+          avatar: Avatar3,
+          name: "Galaviz Lalema",
+          message: "non tellus dignissim",
+          time: "06:32 PM Yesterday",
+          attachments: [
+            {
+              icon: chaticon4,
+              name: "Explainer Video.avi",
+              size: "30.0 MB",
+            },
+            {
+              icon: chaticon5,
+              name: "Ayush Therapy.mp3",
+              size: "4.0 MB",
+            },
+            {
+              icon: chaticon6,
+              name: "The liver.img",
+              size: "520KB",
+            },
+          ],
+        },
+        {
+          id: 4,
+          type: "sent",
+          avatar: null,
+          name: "",
+          message: "Vivamus sed dictum dictum ligula, cursus blandit risus",
+          extraMessage: "Vivamus sed dictum",
+          time: "06:50 PM Today",
+          attachments: [
+            {
+              icon: chaticon4,
+              name: "Explainer Video.avi",
+              size: "30.0 MB",
+            },
+            {
+              icon: chaticon5,
+              name: "Ayush Therapy.mp3",
+              size: "4.0 MB",
+            },
+            {
+              icon: chaticon6,
+              name: "The liver.img",
+              size: "520KB",
+            },
+          ],
+        },
+        {
+          id: 5,
+          type: "received",
+          avatar: Avatar1,
+          name: "21 savage",
+          message: "aliquam ut a ex",
+          time: "5min Ago",
+          attachments: [],
+        },
+      ],
     },
     {
       id: 2,
@@ -36,6 +118,7 @@ const page = ({ params }) => {
       lastMessage: "Lorem ipsum dolor sit amet...",
       unreadCount: 0,
       active: false,
+      messages: [],
     },
     {
       id: 3,
@@ -45,6 +128,14 @@ const page = ({ params }) => {
       lastMessage: "Lorem ipsum dolor sit amet...",
       unreadCount: 4,
       active: false,
+      messages: [],
+    },
+    {
+      id: 4,
+      name: "hamza",
+      avatar: Avatar1,
+      active: false,
+      messages: [],
     },
   ];
   const messages = [

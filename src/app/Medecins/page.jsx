@@ -50,11 +50,10 @@ const Medecins = () => {
         accessor: "email",
       },
 
-      // {
-      //   Header: "",
-      //   accessor: "actions",
-      // },
-      // si vous voulez ajouter un bouton
+      {
+        Header: "",
+        accessor: "actions",
+      },
     ],
     []
   );
@@ -169,26 +168,25 @@ const Medecins = () => {
         mobile: "+1 23 456890",
         email: "example@email.com",
         joiningDate: "01.10.2022",
+        actions: "actions",
       },
       // data for table
     ],
     []
   );
-  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const [filteredData, setFilteredData] = useState(data);
+  const [search, setSearch] = useState("");
 
-  const onSelectChange = (newSelectedRowKeys) => {
-    console.log("selectedRowKeys changed: ", selectedRowKeys);
-    setSelectedRowKeys(newSelectedRowKeys);
-  };
+  useEffect(() => {
+    const result = data.filter((item) =>
+      item.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilteredData(result);
+  }, [search]);
 
-  const rowSelection = {
-    selectedRowKeys,
-    onChange: onSelectChange,
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
   };
-  const onChange = (date, dateString) => {
-    // console.log(date, dateString);
-  };
-
   return (
     <>
       <Sidebar activeClassName="doctors" />
@@ -224,18 +222,20 @@ const Medecins = () => {
                             <h3>Médecins</h3>
                             <div className="doctor-search-blk">
                               <div className="top-nav-search table-search-blk">
-                                <form>
+                                <form className="d-flex">
                                   <input
                                     type="text"
+                                    value={search}
+                                    onChange={handleSearch}
                                     className="form-control"
                                     placeholder="cherche ici"
                                   />
-                                  <Link href="/" className="btn">
+                                  <div className="btn">
                                     <Image src={searchnormal} alt="#" />
-                                  </Link>
+                                  </div>
                                 </form>
                               </div>
-                              <div className="add-group">
+                              {/* <div className="add-group">
                                 <Link
                                   href="/"
                                   className="btn btn-primary add-pluss ms-2"
@@ -248,7 +248,7 @@ const Medecins = () => {
                                 >
                                   <Image src={refreshicon} alt="#" />
                                 </Link>
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         </div>
@@ -257,7 +257,7 @@ const Medecins = () => {
                     {/* Table Header */}
                     {/* Table*/}
                     <div className="table-responsive ">
-                      <Table columns={columns} data={data} />
+                      <Table columns={columns} data={filteredData} />
                     </div>
                   </div>
                 </div>

@@ -45,6 +45,11 @@ const Chat = () => {
       unreadCount: 4,
       active: false,
     },
+    {
+      id: 4,
+      name: "hamza",
+      avatar: Avatar1,
+    },
   ];
   const messages = [];
   return (
