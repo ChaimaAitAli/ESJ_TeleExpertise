@@ -14,22 +14,24 @@ const discussions = [
   {
     id: 1,
     title: "Irritation cutanée",
-    description: "Discuter blabla",
+    description:
+      "Discutons du cas d'un patient souffrant d'une irritation cutanée. Cette discussion abordera les causes potentielles, les symptômes et les traitements",
     doctor: "Aymane El bazi",
     doctorSpeciality: "Chirurgien",
-    neededSpecialities: ["Dermatologue"],
+    neededSpecialities: ["Dermatologue", "Infectiologue"],
     date: "21/02/2024",
-    time: "21:00",
+    time: "11:00",
   },
   {
     id: 2,
     title: "Microbe dentaire",
-    description: "Discuter blabla",
+    description:
+      "Discutons du cas d'un patient souffrant d'une irritation cutanée. Cette discussion abordera les causes potentielles.",
     doctor: "Elbachir Janah",
     doctorSpeciality: "Chirurgien",
     neededSpecialities: ["Dentiste"],
     date: "21/08/2024",
-    time: "17:00",
+    time: "10:30",
   },
   {
     id: 3,

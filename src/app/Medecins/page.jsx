@@ -228,7 +228,7 @@ const Medecins = () => {
                                     value={search}
                                     onChange={handleSearch}
                                     className="form-control"
-                                    placeholder="cherche ici"
+                                    placeholder="chercher ici"
                                   />
                                   <div className="btn">
                                     <Image src={searchnormal} alt="#" />

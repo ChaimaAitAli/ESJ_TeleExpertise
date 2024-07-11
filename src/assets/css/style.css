@@ -11212,7 +11212,6 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 
 /*Formulaire*/
 
-/* Discussions Styling */
 .discussion-list {
   display: flex;
   flex-wrap: wrap;
@@ -11222,19 +11221,14 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 .discussion-item {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 45%;
   margin: 2.5%;
   padding: 20px;
   background-color: #fff;
   color: #2f38a3;
   border-radius: 50px;
-  display: inline-block;
-  vertical-align: top;
   box-sizing: border-box;
-}
-
-.doctor-info {
-  margin-left: 5px;
 }
 
 .discussion-header {
@@ -11246,8 +11240,8 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 
 .discussion-header img,
 .discussion-header .initials {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -11259,7 +11253,7 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   background-color: #03d2c5;
   color: #fff;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 27px;
 }
 
 .discussion-header .doctor-info {
@@ -11268,14 +11262,14 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 
 .discussion-header .doctor-info h4 {
   margin-bottom: 5px;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: bolder;
   color: #2f38a3;
 }
 
 .discussion-header .doctor-info p {
   margin: 0;
-  font-size: 15px;
+  font-size: 13px;
   color: #bdc0e3;
 }
 
@@ -11285,19 +11279,21 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   margin: 20px 0;
   width: 100%;
 }
+
 .discussion-body {
   margin-left: 20px;
 }
+
 .discussion-body h5 {
   margin-bottom: 15px;
-  font-size: 23px;
+  font-size: 20px;
   color: #2f38a3;
   font-weight: bold;
 }
 
 .discussion-body p {
   margin: 5px 0;
-  font-size: 16px;
+  font-size: 14px;
   color: #bdc0e3;
   font-weight: 600;
 }
@@ -11307,23 +11303,60 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   color: #21c6b7;
   font-weight: bold;
 }
+
 .join-button {
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   background-color: #2f38a3;
   color: #fff;
   border-radius: 25px;
   align-self: flex-end;
   margin-top: auto;
-  margin-left: 75%;
-  padding: 12px 24px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
 .join-button:hover {
   background-color: #00d3c7;
   color: white;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table th {
+  background-color: #f8f8f8;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.discussion-cree-item {
+  background-color: #fff;
+}
+
+.launch-button {
+  border: none;
+  background-color: #2f38a3;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.launch-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 /* Create button*/

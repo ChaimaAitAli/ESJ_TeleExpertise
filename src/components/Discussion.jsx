@@ -48,7 +48,7 @@ const Discussion = ({
           À: <span className="time">{time}</span>
         </p>
       </div>
-      <button type="button" className="join-button ">
+      <button type="button" className="join-button">
         Joindre
       </button>
     </div>
