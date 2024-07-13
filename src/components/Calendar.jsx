@@ -163,7 +163,7 @@ const Calender = () => {
                   <div className="col-auto text-end float-end ms-auto">
                     <Link href="/addevent">
                       {/* <i className="fas fa-plus" /> */}
-                      <div className="col-lg-2 col-sm-12">
+                      <div className="col-lg-12 col-sm-12">
                         <a
                           href="#"
                           className="btn btn-primary"

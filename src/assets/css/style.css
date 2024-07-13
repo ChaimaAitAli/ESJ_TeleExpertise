@@ -11340,7 +11340,7 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 }
 
 .accept-button:hover {
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 .reject-button {
@@ -11357,7 +11357,7 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
 }
 
 .reject-button:hover {
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 .table {
@@ -11421,6 +11421,49 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   cursor: pointer;
 }
 
+.DiscussionTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.DiscussionCas {
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+  color: #acafdc;
+  margin-bottom: 10px;
+}
+
+.DiscussionMotif {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.Traitements {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  color: #2f38a3;
+}
+.Fichiers {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #2f38a3;
+}
+
+.DiscussionTraitement {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.infoDisc {
+  margin-bottom: 20px;
+  color: #2f38a3;
+}
+
 /* Create button*/
 .button-creation {
   border-color: #2f38a3;
@@ -11444,6 +11487,12 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   gap: 10px;
   margin-top: 10px;
 }
+.preview-container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
 .file-preview {
   width: 130px;
   height: 130px;
@@ -11454,6 +11503,10 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   border: transparent;
   border-radius: 5px;
   flex-direction: column;
+}
+.file-preview2 img {
+  max-width: 100%; /* Ensure images do not overflow */
+  height: auto;
 }
 .file-link {
   display: flex;
