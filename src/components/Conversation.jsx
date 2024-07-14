@@ -55,7 +55,7 @@ const Conversation = ({ messages, user }) => {
           <div
             className="chat-body"
             style={{
-              height: "350px",
+              height: "300px",
               width: "100%",
               overflowY: "auto",
             }}
