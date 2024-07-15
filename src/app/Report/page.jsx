@@ -4,8 +4,32 @@ import { useEffect, useState, useRef } from "react";
 import Sidebar from "@components/Sidebar";
 import Link from "next/link";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import CompteRendu from "../../components/CompteRendu";
 const Report = () => {
+  const componentRef = useRef();
+
+  const handleExport = async () => {
+    const element = componentRef.current;
+    const canvas = await html2canvas(element, {
+      scale: 2,
+      useCORS: true,
+      logging: true,
+      allowTaint: false,
+      scrollX: 0,
+      scrollY: -window.scrollY,
+    });
+
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF("p", "mm", "a4");
+    const imgWidth = 210; // A4 width in mm
+    const pageHeight = 297; // A4 height in mm
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+    pdf.save("tele_expertise_report.pdf");
+  };
   return (
     <>
       <Sidebar activeClassName="chat" />
@@ -29,9 +53,17 @@ const Report = () => {
               </div>
             </div>
             {/* /Page Header */}
+            <button
+              onClick={handleExport}
+              type="button"
+              className="btn btn-primary"
+            >
+              Export to PDF
+            </button>
             <CompteRendu
-              title="Tele-expertise Report"
-              description="Detailed discussion between doctors regarding patient case."
+              ref={componentRef}
+              title="Rapport de Télé-expertise"
+              description="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               patientName="John"
               patientLastName="Doe"
               date="2024-07-14"

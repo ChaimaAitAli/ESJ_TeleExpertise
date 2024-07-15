@@ -40,12 +40,12 @@ const PrintableComponent = React.forwardRef((props, ref) => {
         <h1 style={{ fontSize: "16pt" }}>{title}</h1>
         <div style={{ textAlign: "right" }}>
           <h2 style={{ fontSize: "14pt", margin: 0 }}>
-            Saint Elizabeth Hospital
+            Hôpital Sainte Élisabeth
           </h2>
         </div>
       </div>
       <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-        Patient Demographics
+        Démographie des Patients
       </h2>
       <table
         style={{
@@ -63,7 +63,7 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                 backgroundColor: "#f5f5f5",
               }}
             >
-              Name
+              Nom
             </td>
             <td style={{ border: "1px solid #ccc", padding: "8px" }}>
               {patientName} {patientLastName}
@@ -87,7 +87,7 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                 backgroundColor: "#f5f5f5",
               }}
             >
-              Time
+              Heure
             </td>
             <td style={{ border: "1px solid #ccc", padding: "8px" }}>{time}</td>
             <td
@@ -97,7 +97,7 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                 backgroundColor: "#f5f5f5",
               }}
             >
-              Main Doctor
+              Médecin Principal
             </td>
             <td style={{ border: "1px solid #ccc", padding: "8px" }}>
               {mainDoctor}
@@ -111,31 +111,45 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                 backgroundColor: "#f5f5f5",
               }}
             >
-              Invited Doctors
+              Médecins Invités
             </td>
             <td
               style={{ border: "1px solid #ccc", padding: "8px" }}
               colSpan="3"
             >
-              sd
+              {invitedDoctors}
             </td>
           </tr>
         </tbody>
       </table>
       <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-        Discussion Points
+        Points de Discussion
       </h2>
       <p style={{ marginBottom: "20px" }}>{description}</p>
       <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>Conclusions</h2>
-      <p style={{ marginBottom: "20px" }}>Conclusion details go here...</p>
+      <p style={{ marginBottom: "20px" }}>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo eum iure
+        nam tenetur porro molestiae atque voluptatem corporis quas! Illo sed
+        cupiditate alias autem eveniet? Pariatur sed repudiandae alias repellat.
+      </p>
       <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-        Recommendations
+        Recommandations
       </h2>
-      <p style={{ marginBottom: "20px" }}>Recommendation details go here...</p>
+      <p style={{ marginBottom: "20px" }}>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum eius ipsum
+        quisquam officiis, vero exercitationem quaerat corporis. Dignissimos
+        itaque aperiam, aliquid aut perspiciatis distinctio possimus, fugiat
+        consectetur nemo quo quam.
+      </p>
       <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-        Additional Notes
+        Notes Supplémentaires
       </h2>
-      <p>Any additional notes go here...</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia natus
+        ipsa voluptate dolorem. Animi optio velit voluptatibus dolores ducimus
+        necessitatibus quod est qui facilis, nostrum praesentium ea enim
+        recusandae modi.
+      </p>
       <div
         style={{
           textAlign: "center",
@@ -143,9 +157,7 @@ const PrintableComponent = React.forwardRef((props, ref) => {
           fontSize: "10pt",
           color: "#888",
         }}
-      >
-        <p>+1 800-765-7678 // 1500 San Pablo Street</p>
-      </div>
+      ></div>
     </div>
   );
 });
