@@ -36,7 +36,7 @@ const DoctorSelectionForm = () => {
       key: 3,
       Img: blogimg6,
       Name: "Dr. William Stephin",
-      Department: "Radiologue",
+      Department: "Psychiatre",
     },
     { key: 4, Img: blogimg12, Name: "Bernardo James", Department: "Dentiste" },
     {
@@ -55,24 +55,11 @@ const DoctorSelectionForm = () => {
 
   const specialities = [
     "Pédiatre",
-    "Allergologue",
-    "Cardiologue",
     "Dermatologue",
-    "Gastro-entérologue",
     "Gynécologue",
-    "Hématologue",
-    "Infectiologue",
     "Médecin généraliste",
-    "Neurologue",
-    "Oncologue",
     "Ophtalmologue",
-    "Orthopédiste",
-    "Oto-rhino-laryngologiste (ORL)",
-    "Pneumologue",
     "Psychiatre",
-    "Radiologue",
-    "Rhumatologue",
-    "Urologue",
   ];
 
   const filteredDoctors = datasource.filter(
