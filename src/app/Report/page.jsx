@@ -64,12 +64,12 @@ const Report = () => {
               ref={componentRef}
               title="Rapport de Télé-expertise"
               description="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              patientName="John"
-              patientLastName="Doe"
+              patientName="Cristiano"
+              patientLastName="Ronaldo"
               date="2024-07-14"
               time="10:00 AM"
-              mainDoctor="Dr. John Doe"
-              invitedDoctors={["Dr. Jane Smith", "Dr. Alex Johnson"]}
+              mainDoctor="Dr. Hicham Mi Esposa"
+              invitedDoctors={["Dr. Chaima ait ali", " Dr. Sbaiti Mohammed"]}
             />
           </div>
         </div>
