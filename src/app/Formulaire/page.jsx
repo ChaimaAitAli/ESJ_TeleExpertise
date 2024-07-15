@@ -147,7 +147,7 @@ const Formulaire = () => {
                     href="#bottom-justified-tab3"
                     data-bs-toggle="tab"
                   >
-                    Inviter des Médecins
+                    Planification
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -556,14 +556,6 @@ const Formulaire = () => {
                                         use12Hours
                                         format="h:mm a"
                                         disabledHours={disabledHours}
-                                        disabledMinutes={() =>
-                                          disabledMinutes(selectedHour)
-                                        }
-                                        onChange={(time) =>
-                                          setSelectedHour(
-                                            time ? time.hour() : null
-                                          )
-                                        }
                                       />
                                     </Form.Item>
                                   </div>

@@ -194,9 +194,11 @@ const AppelVideo = () => {
                       <div className="join-contents horizontal-view fade-whiteboard">
                         <div className="join-video user-active">
                           <Image
-                            src={call}
+                            src="/doctorVideo.png"
                             className="img-fluid call-imgs"
                             alt="Logo"
+                            width={722}
+                            height={354}
                           />
                           <div className="video-avatar">
                             <div className="text-avatar">
