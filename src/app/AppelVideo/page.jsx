@@ -33,8 +33,13 @@ import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 const discussion = {
   Titre: "Irritation Cutanée",
   CasDuPatient: "Maladie Rare",
+  AntecedentsMedicaux: ["Diabète", "Epilepsie"],
+  AntecedentsChirurgicaux: "Ablation de la vésicule biliaire en 2007",
+  Habitudes: ["Sport"],
+  AntecedentsFamiliaux: ["Hypertension artérielle (tension)"],
   Motif:
     "Discutons du cas d'un patient souffrant d'une irritation cutanée. Cette discussion abordera les causes potentielles, les symptômes et les traitements de l'irritation.",
+
   Traitement:
     "1. Application de crème hydratante\n2. Utilisation d'antihistaminiques\n3. Éviter les irritants connus\n4. Consultation avec un dermatologue",
   Fichiers: [
@@ -120,6 +125,44 @@ const AppelVideo = () => {
             <div className="DiscussionTitle">{discussion.Titre}</div>
             <div className="DiscussionCas">{discussion.CasDuPatient}</div>
             <div className="DiscussionMotif">{discussion.Motif}</div>
+            {discussion.AntecedentsMedicaux.length > 0 && (
+              <div>
+                <div className="Traitements">Antécédents Médicaux</div>
+                {discussion.AntecedentsMedicaux.map((antecedent, index) => (
+                  <div key={index} className="DiscussionMotif">
+                    {index + 1}. {antecedent}
+                  </div>
+                ))}
+              </div>
+            )}
+            {discussion.AntecedentsChirurgicaux != "" && (
+              <div>
+                <div className="Traitements">Antécédents Chirurgicaux</div>
+                <div className="DiscussionMotif">
+                  {discussion.AntecedentsChirurgicaux}
+                </div>
+              </div>
+            )}
+            {discussion.Habitudes.length > 0 && (
+              <div>
+                <div className="Traitements">Habitudes</div>
+                {discussion.Habitudes.map((habitude, index) => (
+                  <div key={index} className="DiscussionMotif">
+                    {index + 1}. {habitude}
+                  </div>
+                ))}
+              </div>
+            )}
+            {discussion.AntecedentsFamiliaux.length > 0 && (
+              <div>
+                <div className="Traitements">Antécédents Familiaux</div>
+                {discussion.AntecedentsFamiliaux.map((antecedent, index) => (
+                  <div key={index} className="DiscussionMotif">
+                    {index + 1}. {antecedent}
+                  </div>
+                ))}
+              </div>
+            )}
             <div className="Traitements">Traitements</div>
             <div className="DiscussionTraitement">{discussion.Traitement}</div>
             {discussion.Fichiers.length > 0 && (
