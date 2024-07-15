@@ -58,7 +58,7 @@ const Report = () => {
               type="button"
               className="btn btn-primary"
             >
-              Export to PDF
+              Télécharger le rapport
             </button>
             <CompteRendu
               ref={componentRef}
