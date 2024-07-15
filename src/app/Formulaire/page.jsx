@@ -47,38 +47,75 @@ const Formulaire = () => {
     { value: 1, label: "Appel Video" },
     { value: 2, label: "Chat" },
   ]);
-  const [Specialites, setSpecialites] = useState([
-    { value: 1, label: "Allergologue" },
-    { value: 2, label: "Anesthésiste" },
-    { value: 3, label: "Cardiologue" },
-    { value: 4, label: "Chirurgien" },
-    { value: 5, label: "Dermatologue" },
-    { value: 6, label: "Endocrinologue" },
-    { value: 7, label: "Gastro-entérologue" },
-    { value: 8, label: "Gynécologue" },
-    { value: 9, label: "Hématologue" },
-    { value: 10, label: "Infectiologue" },
-    { value: 11, label: "Médecin généraliste" },
-    { value: 12, label: "Néphrologue" },
-    { value: 13, label: "Neurologue" },
-    { value: 14, label: "Oncologue" },
-    { value: 15, label: "Ophtalmologue" },
-    { value: 16, label: "Orthopédiste" },
-    { value: 17, label: "Oto-rhino-laryngologiste (ORL)" },
-    { value: 18, label: "Pédiatre" },
-    { value: 19, label: "Pneumologue" },
-    { value: 20, label: "Psychiatre" },
-    { value: 21, label: "Radiologue" },
-    { value: 22, label: "Rhumatologue" },
-    { value: 23, label: "Urologue" },
+  const [Chirurgicaux, setChirurgicaux] = useState([
+    { value: 1, label: "Oui" },
+    { value: 2, label: "Non" },
   ]);
-  const [Personnels, setPersonnels] = useState([
+  const [Habitudes, setHabitudes] = useState([
+    { value: 1, label: "Tabac" },
+    { value: 2, label: "Sport" },
+    { value: 3, label: "Alcool" },
+    { value: 3, label: "Temps d'écran élevé" },
+  ]);
+  const [Specialites, setSpecialites] = useState([
+    { value: 1, label: "Pédiatre" },
+    { value: 2, label: "Cardiologue" },
+    { value: 3, label: "Dermatologue" },
+    { value: 4, label: "Endocrinologue" },
+    { value: 5, label: "Gastro-entérologue" },
+    { value: 6, label: "Gynécologue" },
+    { value: 7, label: "Hématologue" },
+    { value: 8, label: "Infectiologue" },
+    { value: 9, label: "Médecin généraliste" },
+    { value: 10, label: "Neurologue" },
+    { value: 11, label: "Oncologue" },
+    { value: 12, label: "Ophtalmologue" },
+    { value: 13, label: "Orthopédiste" },
+    { value: 14, label: "Oto-rhino-laryngologiste (ORL)" },
+    { value: 15, label: "Pneumologue" },
+    { value: 16, label: "Psychiatre" },
+    { value: 17, label: "Radiologue" },
+    { value: 18, label: "Rhumatologue" },
+    { value: 19, label: "Urologue" },
+  ]);
+  const [Medicaux, setMedicaux] = useState([
+    { value: 1, label: "Asthme" },
+    { value: 2, label: "Diabète" },
+    { value: 3, label: "Epilepsie" },
+    { value: 4, label: "Troubles du spectre de l'autisme(TSA)" },
+    { value: 5, label: "Troubles de Sommeil" },
+    { value: 6, label: "Aucune" },
+    { value: 7, label: "Autre (à préciser en description)" },
+  ]);
+  const [Familiaux, setFamiliaux] = useState([
+    { value: 1, label: "Diabète" },
+    { value: 3, label: "Hypertension Artérielle" },
+    { value: 4, label: "Cancer" },
+    { value: 5, label: "Aucune" },
+    { value: 6, label: "Autre (à préciser en description)" },
+  ]);
+
+  const [AllergiesMedicales, setAllergiesMedicales] = useState([
     { value: 1, label: "Asthme" },
     { value: 2, label: "Diabète" },
     { value: 3, label: "Epilepsie" },
     { value: 4, label: "Maladie coeliaque" },
     { value: 5, label: "Fibrose kystique" },
     { value: 6, label: "Troubles du spectre de l'autisme(TSA)" },
+    { value: 7, label: "Tension" },
+    { value: 8, label: "Aucune" },
+    { value: 9, label: "Autre (à préciser en description)" },
+  ]);
+  const [AllergiesAlimentaires, setAllergiesAlimentaires] = useState([
+    { value: 1, label: "Asthme" },
+    { value: 2, label: "Diabète" },
+    { value: 3, label: "Epilepsie" },
+    { value: 4, label: "Maladie coeliaque" },
+    { value: 5, label: "Fibrose kystique" },
+    { value: 6, label: "Troubles du spectre de l'autisme(TSA)" },
+    { value: 7, label: "Tension" },
+    { value: 8, label: "Aucune" },
+    { value: 9, label: "Autre (à préciser en description)" },
   ]);
   useEffect(() => {
     const handleSuivant1 = () => {
@@ -284,6 +321,109 @@ const Formulaire = () => {
                           </div>
                         </div>
                         <div className="col-md-10 mx-auto">
+                          <div
+                            style={{ display: "flex", flexDirection: "column" }}
+                          >
+                            <label className="col-md-10 col-form-label">
+                              Antécédents Personnels
+                            </label>
+                            <label
+                              className="col-form-label col-md-6"
+                              style={{ fontSize: "13px", color: "#2F38A3" }}
+                            >
+                              1-Medicaux
+                            </label>
+                          </div>
+                          <div className="form-group row">
+                            <div className="custom-width-11-5">
+                              <Select
+                                isMulti
+                                defaultValue={selectedOption}
+                                onChange={setSelectedOption}
+                                options={Medicaux}
+                                style={{ marginBottom: "10px" }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-10 mx-auto">
+                          <label
+                            className="col-md-10 col-form-label"
+                            style={{ fontSize: "13px", color: "#2F38A3" }}
+                          >
+                            2-Chirurgicaux
+                          </label>
+                          <div className="form-group row">
+                            {/*<div className="custom-width-11-5">
+                              <Select
+                                defaultValue={selectedOption}
+                                onChange={setSelectedOption}
+                                options={Chirurgicaux}
+                                style={{ marginBottom: "10px" }}
+                              />
+                            </div>*/}
+                            <div className="custom-width-11-5">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Merci de fournir les types et les années des chirurgies du patient, le cas échéant."
+                              ></input>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-10 mx-auto">
+                          <label
+                            className="col-md-10 col-form-label"
+                            style={{ fontSize: "13px", color: "#2F38A3" }}
+                          >
+                            3-Habitudes
+                          </label>
+                          <div className="form-group row">
+                            <div className="custom-width-11-5">
+                              <Select
+                                isMulti
+                                defaultValue={selectedOption}
+                                onChange={setSelectedOption}
+                                options={Habitudes}
+                                style={{ marginBottom: "10px" }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-10 mx-auto">
+                          <label className="col-md-10 col-form-label">
+                            Antécédents Familiaux
+                          </label>
+                          <div className="form-group row">
+                            <div className="custom-width-11-5">
+                              <Select
+                                isMulti
+                                defaultValue={selectedOption}
+                                onChange={setSelectedOption}
+                                options={Medicaux}
+                                style={{ marginBottom: "10px" }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="col-md-10 mx-auto">
+                          <label className="col-form-label col-md-6">
+                            Traitements Préscris
+                          </label>
+                          <div className="form-group row">
+                            <div className="custom-width-11-5">
+                              <textarea
+                                rows={5}
+                                cols={5}
+                                className="form-control"
+                                placeholder="Traitements"
+                                defaultValue={""}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-10 mx-auto">
                           <label className="col-form-label col-md-6">
                             Titre de la Discussion
                           </label>
@@ -292,7 +432,7 @@ const Formulaire = () => {
                               <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Titre"
+                                placeholder="Donnez un Titre concis pour la discussion que vous voulez créer"
                               />
                             </div>
                           </div>
@@ -352,38 +492,10 @@ const Formulaire = () => {
                         </h4>
                       </div>
                       <form action="#">
-                        <div
-                          className="custom-width-9-5 mx-auto"
-                          style={{ marginBottom: "15px" }}
-                        >
-                          <label className="col-form-label col-md-6">
-                            Antécédents Personnels
-                          </label>
-                          <Select
-                            isMulti
-                            defaultValue={selectedOptions}
-                            onChange={setSelectedOptions}
-                            options={Personnels}
-                          />
-                        </div>
-                        <div
-                          className="custom-width-9-5 mx-auto"
-                          style={{ marginBottom: "15px" }}
-                        >
-                          <label className="col-form-label col-md-6">
-                            Antécédents Familiaux
-                          </label>
-                          <Select
-                            isMulti
-                            defaultValue={selectedOptions}
-                            onChange={setSelectedOptions}
-                            options={Personnels}
-                          />
-                        </div>
-
+                        <MyFileInput />
                         <div className="col-md-10 mx-auto">
                           <label className="col-form-label col-md-6">
-                            Eventuels Traitements
+                            Commentez Vos Fichiers Importés
                           </label>
                           <div className="form-group row">
                             <div className="custom-width-11-5">
@@ -391,13 +503,12 @@ const Formulaire = () => {
                                 rows={5}
                                 cols={5}
                                 className="form-control"
-                                placeholder="Traitements"
+                                placeholder="Commentaires"
                                 defaultValue={""}
                               />
                             </div>
                           </div>
                         </div>
-                        <MyFileInput />
                         <div className="text-end">
                           <button
                             type="button"
