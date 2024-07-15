@@ -5,21 +5,7 @@ import Sidebar from "@components/Sidebar";
 import Link from "next/link";
 import Image from "next/image";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
-import {
-  blogimg10,
-  imagesend,
-  pdficon,
-  pdficon3,
-  pdficon4,
-  plusicon,
-  refreshicon,
-  searchnormal,
-  blogimg12,
-  blogimg2,
-  blogimg4,
-  blogimg6,
-  blogimg8,
-} from "../../components/imagepath";
+import { searchnormal } from "../../components/imagepath";
 import Table from "@components/Table";
 
 const Medecins = () => {
