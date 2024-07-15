@@ -126,9 +126,9 @@ const Home = () => {
                 <div className="col-md-6">
                   <div className="morning-user">
                     <h2>
-                      Bonjour, <span>Dr.Smith Wayne</span>
+                      Bonjour, <span>Dr.Ahmed Berada </span>
                     </h2>
-                    <p>Have a nice day at work</p>
+                    <p>Bonne journée au travail</p>
                   </div>
                 </div>
                 <div className="col-md-6 position-blk">

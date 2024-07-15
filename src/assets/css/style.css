@@ -11481,6 +11481,10 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   width: 97%;
 }
 
+.custom-width-9-5 {
+  width: 93%;
+}
+
 .preview-container {
   display: flex;
   flex-wrap: wrap;

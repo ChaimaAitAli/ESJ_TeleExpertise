@@ -43,6 +43,10 @@ const Formulaire = () => {
     { value: 5, label: "Patient vivant en zone médiocre " },
     { value: 6, label: "Autre (à préciser en description)" },
   ]);
+  const [TypeDiscussion, setTypeDiscussion] = useState([
+    { value: 1, label: "Appel Video" },
+    { value: 2, label: "Chat" },
+  ]);
   const [Specialites, setSpecialites] = useState([
     { value: 1, label: "Allergologue" },
     { value: 2, label: "Anesthésiste" },
@@ -68,7 +72,14 @@ const Formulaire = () => {
     { value: 22, label: "Rhumatologue" },
     { value: 23, label: "Urologue" },
   ]);
-
+  const [Personnels, setPersonnels] = useState([
+    { value: 1, label: "Asthme" },
+    { value: 2, label: "Diabète" },
+    { value: 3, label: "Epilepsie" },
+    { value: 4, label: "Maladie coeliaque" },
+    { value: 5, label: "Fibrose kystique" },
+    { value: 6, label: "Troubles du spectre de l'autisme(TSA)" },
+  ]);
   useEffect(() => {
     const handleSuivant1 = () => {
       document.querySelector('[href="#bottom-justified-tab2"]').click();
@@ -341,6 +352,35 @@ const Formulaire = () => {
                         </h4>
                       </div>
                       <form action="#">
+                        <div
+                          className="custom-width-9-5 mx-auto"
+                          style={{ marginBottom: "15px" }}
+                        >
+                          <label className="col-form-label col-md-6">
+                            Antécédents Personnels
+                          </label>
+                          <Select
+                            isMulti
+                            defaultValue={selectedOptions}
+                            onChange={setSelectedOptions}
+                            options={Personnels}
+                          />
+                        </div>
+                        <div
+                          className="custom-width-9-5 mx-auto"
+                          style={{ marginBottom: "15px" }}
+                        >
+                          <label className="col-form-label col-md-6">
+                            Antécédents Familiaux
+                          </label>
+                          <Select
+                            isMulti
+                            defaultValue={selectedOptions}
+                            onChange={setSelectedOptions}
+                            options={Personnels}
+                          />
+                        </div>
+
                         <div className="col-md-10 mx-auto">
                           <label className="col-form-label col-md-6">
                             Eventuels Traitements
@@ -460,6 +500,20 @@ const Formulaire = () => {
                             style={{ width: "100%" }}
                           ></hr>
                           <DoctorSelectionForm />
+                          <div className="col-md-12 mx-auto">
+                            <label className="col-md-10 col-form-label">
+                              Type de Discussion
+                            </label>
+                            <div className="form-group row">
+                              <div className="col-md-12">
+                                <Select
+                                  defaultValue={selectedOption}
+                                  onChange={setSelectedOption}
+                                  options={TypeDiscussion}
+                                />
+                              </div>
+                            </div>
+                          </div>
                           <div className="row">
                             <div className="col-md-12">
                               <div className="card-box">
@@ -529,6 +583,20 @@ const Formulaire = () => {
                                   defaultValue={selectedOptions}
                                   onChange={setSelectedOptions}
                                   options={Specialites}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-md-12 mx-auto">
+                            <label className="col-md-10 col-form-label">
+                              Type de Discussion
+                            </label>
+                            <div className="form-group row">
+                              <div className="col-md-12">
+                                <Select
+                                  defaultValue={selectedOption}
+                                  onChange={setSelectedOption}
+                                  options={TypeDiscussion}
                                 />
                               </div>
                             </div>
