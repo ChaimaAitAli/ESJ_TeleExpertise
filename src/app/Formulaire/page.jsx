@@ -36,26 +36,38 @@ const Formulaire = () => {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
-  const [Cas, setCas] = useState([
-    { value: 2, label: "Atteint d'une maladie rare" },
-    { value: 3, label: "Atteint d'une affection Longue Durée" },
-    { value: 4, label: "En détention" },
-    { value: 5, label: "Patient vivant en zone médiocre " },
-    { value: 6, label: "Autre (à préciser en description)" },
+  const [selectedHabitudes, setSelectedHabitudes] = useState([]);
+  const [selectedMotifTele, setSelectedMotifTele] = useState([]);
+  const [selectedMedicaux, setSelectedMedicaux] = useState([]);
+  const [selectedFamiliaux, setSelectedFamiliaux] = useState([]);
+  const showMoreInfoMedicaux = selectedMedicaux.some(
+    (option) => option.value === 7
+  );
+  const showMoreInfoFamiliaux = selectedFamiliaux.some(
+    (option) => option.value === 6
+  );
+  const showMoreInfoMotifTele = selectedMotifTele.some(
+    (option) => option.value === 8
+  );
+  const [MotifTele, setMotifTele] = useState([
+    { value: 1, label: "Ophtalmique" },
+    { value: 2, label: "Bucco-dentaire" },
+    { value: 3, label: "O.R.L" },
+    { value: 4, label: "Pleuropulmonaire" },
+    { value: 5, label: "Cardio-vasculaire" },
+    { value: 6, label: "Digestif" },
+    { value: 7, label: "Loco-moteur" },
+    { value: 8, label: "Autre (à préciser en description)" },
   ]);
   const [TypeDiscussion, setTypeDiscussion] = useState([
     { value: 1, label: "Appel Video" },
     { value: 2, label: "Chat" },
   ]);
-  const [Chirurgicaux, setChirurgicaux] = useState([
-    { value: 1, label: "Oui" },
-    { value: 2, label: "Non" },
-  ]);
   const [Habitudes, setHabitudes] = useState([
     { value: 1, label: "Tabac" },
     { value: 2, label: "Sport" },
     { value: 3, label: "Alcool" },
-    { value: 3, label: "Temps d'écran élevé" },
+    { value: 4, label: "Temps d'écran élevé" },
   ]);
   const [Specialites, setSpecialites] = useState([
     { value: 1, label: "Pédiatre" },
@@ -76,34 +88,13 @@ const Formulaire = () => {
   ]);
   const [Familiaux, setFamiliaux] = useState([
     { value: 1, label: "Diabète" },
-    { value: 3, label: "Hypertension Artérielle" },
+    { value: 2, label: "Hypertension Artérielle" },
+    { value: 3, label: "Maladie Cardiovasculaire" },
     { value: 4, label: "Cancer" },
     { value: 5, label: "Aucune" },
     { value: 6, label: "Autre (à préciser en description)" },
   ]);
 
-  const [AllergiesMedicales, setAllergiesMedicales] = useState([
-    { value: 1, label: "Asthme" },
-    { value: 2, label: "Diabète" },
-    { value: 3, label: "Epilepsie" },
-    { value: 4, label: "Maladie coeliaque" },
-    { value: 5, label: "Fibrose kystique" },
-    { value: 6, label: "Troubles du spectre de l'autisme(TSA)" },
-    { value: 7, label: "Tension" },
-    { value: 8, label: "Aucune" },
-    { value: 9, label: "Autre (à préciser en description)" },
-  ]);
-  const [AllergiesAlimentaires, setAllergiesAlimentaires] = useState([
-    { value: 1, label: "Asthme" },
-    { value: 2, label: "Diabète" },
-    { value: 3, label: "Epilepsie" },
-    { value: 4, label: "Maladie coeliaque" },
-    { value: 5, label: "Fibrose kystique" },
-    { value: 6, label: "Troubles du spectre de l'autisme(TSA)" },
-    { value: 7, label: "Tension" },
-    { value: 8, label: "Aucune" },
-    { value: 9, label: "Autre (à préciser en description)" },
-  ]);
   useEffect(() => {
     const handleSuivant1 = () => {
       document.querySelector('[href="#bottom-justified-tab2"]').click();
@@ -295,16 +286,30 @@ const Formulaire = () => {
                         </div>
                         <div className="col-md-10 mx-auto">
                           <label className="col-md-10 col-form-label">
-                            Cas du Patient
+                            Motif de la TéléExpertise
                           </label>
                           <div className="form-group row">
-                            <div className="custom-width-11-5">
+                            <div
+                              className="custom-width-11-5"
+                              style={{ marginBottom: "20px" }}
+                            >
                               <Select
-                                defaultValue={selectedOption}
-                                onChange={setSelectedOption}
-                                options={Cas}
+                                isMulti
+                                defaultValue={selectedMotifTele}
+                                onChange={setSelectedMotifTele}
+                                options={MotifTele}
                               />
                             </div>
+                            {showMoreInfoMotifTele && (
+                              <div className="custom-width-11-5">
+                                <input
+                                  id="more info motif"
+                                  type="text"
+                                  className="form-control"
+                                  placeholder="Merci de fournir plus de Détails sur le motif."
+                                ></input>
+                              </div>
+                            )}
                           </div>
                         </div>
                         <div className="col-md-10 mx-auto">
@@ -322,15 +327,28 @@ const Formulaire = () => {
                             </label>
                           </div>
                           <div className="form-group row">
-                            <div className="custom-width-11-5">
+                            <div
+                              className="custom-width-11-5"
+                              style={{ marginBottom: "20px" }}
+                            >
                               <Select
                                 isMulti
-                                defaultValue={selectedOption}
-                                onChange={setSelectedOption}
+                                defaultValue={selectedMedicaux}
+                                onChange={setSelectedMedicaux}
                                 options={Medicaux}
                                 style={{ marginBottom: "10px" }}
                               />
                             </div>
+                            {showMoreInfoMedicaux && (
+                              <div className="custom-width-11-5">
+                                <input
+                                  id="more info medicaux"
+                                  type="text"
+                                  className="form-control"
+                                  placeholder="Merci de fournir plus de Détails sur les antécédents medicaux."
+                                ></input>
+                              </div>
+                            )}
                           </div>
                         </div>
                         <div className="col-md-10 mx-auto">
@@ -369,34 +387,60 @@ const Formulaire = () => {
                             <div className="custom-width-11-5">
                               <Select
                                 isMulti
-                                defaultValue={selectedOption}
-                                onChange={setSelectedOption}
+                                defaultValue={selectedHabitudes}
+                                onChange={setSelectedHabitudes}
                                 options={Habitudes}
                                 style={{ marginBottom: "10px" }}
                               />
                             </div>
                           </div>
+                          {selectedHabitudes.length > 0 && (
+                            <div
+                              className="custom-width-11-5"
+                              style={{ marginBottom: "20px" }}
+                            >
+                              <input
+                                id="more info habitudes"
+                                type="text"
+                                className="form-control"
+                                placeholder="Merci de fournir plus de Détails sur les habitudes sélectionnées."
+                              ></input>
+                            </div>
+                          )}
                         </div>
                         <div className="col-md-10 mx-auto">
                           <label className="col-md-10 col-form-label">
                             Antécédents Familiaux
                           </label>
                           <div className="form-group row">
-                            <div className="custom-width-11-5">
+                            <div
+                              className="custom-width-11-5"
+                              style={{ marginBottom: "20px" }}
+                            >
                               <Select
                                 isMulti
-                                defaultValue={selectedOption}
-                                onChange={setSelectedOption}
-                                options={Medicaux}
+                                defaultValue={selectedFamiliaux}
+                                onChange={setSelectedFamiliaux}
+                                options={Familiaux}
                                 style={{ marginBottom: "10px" }}
                               />
                             </div>
+                            {showMoreInfoFamiliaux && (
+                              <div className="custom-width-11-5">
+                                <input
+                                  id="more info familiaux"
+                                  type="text"
+                                  className="form-control"
+                                  placeholder="Merci de fournir plus de Détails sur les antécédents familiaux."
+                                ></input>
+                              </div>
+                            )}
                           </div>
                         </div>
 
                         <div className="col-md-10 mx-auto">
                           <label className="col-form-label col-md-6">
-                            Traitements Préscris
+                            Description de l'état clinique
                           </label>
                           <div className="form-group row">
                             <div className="custom-width-11-5">
@@ -404,7 +448,7 @@ const Formulaire = () => {
                                 rows={5}
                                 cols={5}
                                 className="form-control"
-                                placeholder="Traitements"
+                                placeholder="Description"
                                 defaultValue={""}
                               />
                             </div>
@@ -419,7 +463,7 @@ const Formulaire = () => {
                               <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Donnez un Titre concis pour la discussion que vous voulez créer"
+                                placeholder="Donnez la raison de la TéléExpertise en une phrase"
                               />
                             </div>
                           </div>
@@ -434,7 +478,7 @@ const Formulaire = () => {
                                 rows={5}
                                 cols={5}
                                 className="form-control"
-                                placeholder="Détaillez la raison pour laquelle vous voulez créer cette discussion"
+                                placeholder="Posez 2 ou 3 questions qui seront l'objet de la TéléExpertise"
                                 defaultValue={""}
                               />
                             </div>

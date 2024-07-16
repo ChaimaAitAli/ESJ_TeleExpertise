@@ -160,21 +160,6 @@ const Calender = () => {
                     </li>
                     <li className="breadcrumb-item active">Calendrier</li>
                   </ul>
-                  <div className="col-auto text-end float-end ms-auto">
-                    <Link href="/addevent">
-                      {/* <i className="fas fa-plus" /> */}
-                      <div className="col-lg-12 col-sm-12">
-                        <a
-                          href="#"
-                          className="btn btn-primary"
-                          data-bs-toggle="modal"
-                          data-bs-target="#add_event"
-                        >
-                          Create Event
-                        </a>
-                      </div>
-                    </Link>
-                  </div>
                 </div>
               </div>
             </div>
