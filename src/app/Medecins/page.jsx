@@ -236,6 +236,37 @@ const Medecins = () => {
                                 </Link>
                               </div> */}
                             </div>
+                            <h3>Specialité</h3>
+                            <div className="doctor-search-blk">
+                              <div className="top-nav-search table-search-blk">
+                                <form className="d-flex">
+                                  <input
+                                    type="text"
+                                    value={search}
+                                    onChange={handleSearch}
+                                    className="form-control"
+                                    placeholder="chercher ici"
+                                  />
+                                  <div className="btn">
+                                    <Image src={searchnormal} alt="#" />
+                                  </div>
+                                </form>
+                              </div>
+                              {/* <div className="add-group">
+                                <Link
+                                  href="/"
+                                  className="btn btn-primary add-pluss ms-2"
+                                >
+                                  <Image src={plusicon} alt="#" />
+                                </Link>
+                                <Link
+                                  href="/"
+                                  className="btn btn-primary doctor-refresh ms-2"
+                                >
+                                  <Image src={refreshicon} alt="#" />
+                                </Link>
+                              </div> */}
+                            </div>
                           </div>
                         </div>
                       </div>
