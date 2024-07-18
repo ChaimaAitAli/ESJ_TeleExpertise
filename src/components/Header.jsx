@@ -244,7 +244,7 @@ const Header = () => {
               data-bs-toggle="dropdown"
             >
               <Image src={noteicon1} alt="" />
-              <span className="pulse" />{" "}
+              <span className="pulse" />
             </Link>
             <div className="dropdown-menu notifications">
               <div className="topnav-dropdown-header">
