@@ -7,8 +7,24 @@ import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import CompteRendu from "../../components/CompteRendu";
+import Select from "react-select";
 const Report = () => {
   const componentRef = useRef();
+  const [title, setTitle] = useState("Rapport de Télé-expertise");
+  const [description, setDescription] = useState(
+    "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  );
+  const [patientName, setPatientName] = useState("Hicham");
+  const [patientLastName, setPatientLastName] = useState("Hicham");
+  const [patientDOB, setPatientDOB] = useState("1985-05-20");
+  const [date, setDate] = useState("2024-07-14");
+  const [time, setTime] = useState("10:00 AM");
+  const [mainDoctor, setMainDoctor] = useState("Dr. Hicham");
+  const [invitedDoctors, setInvitedDoctors] = useState([
+    "Dr. Chaima",
+    "Dr. Mohammed",
+    "lil uzi",
+  ]);
 
   const handleExport = async () => {
     const element = componentRef.current;
@@ -78,10 +94,18 @@ const Report = () => {
                       </li>
                     </ul>
                     <div className="tab-content">
-                      <div
-                        className="tab-pane show active"
-                        id="basictab1"
-                      ></div>
+                      <div className="tab-pane show active" id="basictab1">
+                        <div className="form-group">
+                          <label htmlFor="description">Description:</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                          />
+                        </div>
+                      </div>
                       <div className="tab-pane" id="basictab2">
                         <div>
                           <button
@@ -94,14 +118,15 @@ const Report = () => {
 
                           <CompteRendu
                             ref={componentRef}
-                            title="Rapport de Télé-expertise"
-                            description="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                            patientName="hicahm"
-                            patientLastName="hicham"
-                            date="2024-07-14"
-                            time="10:00 AM"
-                            mainDoctor="Dr. Hicham Mi ds"
-                            invitedDoctors={["Dr. Chaima", " Dr.  Mohammed"]}
+                            title={title}
+                            description={description}
+                            patientName={patientName}
+                            patientLastName={patientLastName}
+                            patientDOB={patientDOB}
+                            date={date}
+                            time={time}
+                            mainDoctor={mainDoctor}
+                            invitedDoctors={invitedDoctors}
                           />
                         </div>
                       </div>

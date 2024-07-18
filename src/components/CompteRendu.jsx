@@ -6,6 +6,7 @@ const PrintableComponent = React.forwardRef((props, ref) => {
     description,
     patientName,
     patientLastName,
+    patientDOB,
     date,
     time,
     mainDoctor,
@@ -88,7 +89,7 @@ const PrintableComponent = React.forwardRef((props, ref) => {
           </div>
         </div>
         <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-          Démographie des Patients
+          Informations sur le patient
         </h2>
         <table
           style={{
@@ -118,13 +119,25 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                   backgroundColor: "#f5f5f5",
                 }}
               >
-                Date
+                Date de naissance
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {patientDOB}
+              </td>
+            </tr>
+            <tr>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Date de la télé-expertise
               </td>
               <td style={{ border: "1px solid #ccc", padding: "8px" }}>
                 {date}
               </td>
-            </tr>
-            <tr>
               <td
                 style={{
                   border: "1px solid #ccc",
@@ -137,6 +150,8 @@ const PrintableComponent = React.forwardRef((props, ref) => {
               <td style={{ border: "1px solid #ccc", padding: "8px" }}>
                 {time}
               </td>
+            </tr>
+            <tr>
               <td
                 style={{
                   border: "1px solid #ccc",
@@ -149,8 +164,6 @@ const PrintableComponent = React.forwardRef((props, ref) => {
               <td style={{ border: "1px solid #ccc", padding: "8px" }}>
                 {mainDoctor}
               </td>
-            </tr>
-            <tr>
               <td
                 style={{
                   border: "1px solid #ccc",
@@ -160,26 +173,16 @@ const PrintableComponent = React.forwardRef((props, ref) => {
               >
                 Médecins Invités
               </td>
-              <td
-                style={{ border: "1px solid #ccc", padding: "8px" }}
-                colSpan="3"
-              >
-                {invitedDoctors}
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {invitedDoctors.join(", ")}
               </td>
             </tr>
           </tbody>
         </table>
         <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-          Points de Discussion
+          Description du Cas
         </h2>
         <p style={{ marginBottom: "20px" }}>{description}</p>
-        <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>Conclusions</h2>
-        <p style={{ marginBottom: "20px" }}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo eum iure
-          nam tenetur porro molestiae atque voluptatem corporis quas! Illo sed
-          cupiditate alias autem eveniet? Pariatur sed repudiandae alias
-          repellat.
-        </p>
         <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
           Recommandations
         </h2>
@@ -192,11 +195,21 @@ const PrintableComponent = React.forwardRef((props, ref) => {
         <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
           Notes Supplémentaires
         </h2>
-        <p>
+        <p style={{ marginBottom: "20px" }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
           natus ipsa voluptate dolorem. Animi optio velit voluptatibus dolores
           ducimus necessitatibus quod est qui facilis, nostrum praesentium ea
           enim recusandae modi.
+        </p>
+        <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
+          Discussion et Conclusion
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quo eum
+          iure nam tenetur porro molestiae atque voluptatem corporis quas! Illo
+          sed cupiditate alias autem eveniet? Pariatur sed repudiandae alias
+          repellat.
         </p>
         <div
           style={{
