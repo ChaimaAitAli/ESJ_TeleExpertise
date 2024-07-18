@@ -138,7 +138,17 @@ const page = ({ params }) => {
       messages: [],
     },
   ];
-  const messages = [];
+  const messages = [
+    {
+      id: 1,
+      type: "received",
+      avatar: Avatar5,
+      message:
+        "How likely are you to recommend our company to your friends and family?",
+      time: "06:00 PM, 30 Sep 2022",
+      attachments: [],
+    },
+  ];
   // const messages = [
   //   {
   //     id: 1,
