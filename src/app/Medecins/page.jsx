@@ -37,7 +37,7 @@ const Medecins = () => {
     () => [
       {
         name: "Ahmed El Mansouri",
-        department: "Cardiologie",
+        speciality: "Cardiologie",
         specialization: "Insuffisance cardiaque",
         degree: "MD, PhD",
         mobile: "+212 6 12 34 56 78",
@@ -46,7 +46,7 @@ const Medecins = () => {
       },
       {
         name: "Fatima Zahra Amrani",
-        department: "Neurologie",
+        speciality: "Neurologie",
         specialization: "Épilepsie",
         degree: "MD, MS",
         mobile: "+212 6 23 45 67 89",
@@ -55,7 +55,7 @@ const Medecins = () => {
       },
       {
         name: "Ali Benchekroun",
-        department: "Pédiatrie",
+        speciality: "Pédiatrie",
         specialization: "Néonatologie",
         degree: "MBBS, MD",
         mobile: "+212 6 34 56 78 90",
@@ -64,7 +64,7 @@ const Medecins = () => {
       },
       {
         name: "Leila El Haddad",
-        department: "Orthopédie",
+        speciality: "Orthopédie",
         specialization: "Remplacement articulaire",
         degree: "MD, MS",
         mobile: "+212 6 45 67 89 01",
@@ -73,7 +73,7 @@ const Medecins = () => {
       },
       {
         name: "Khalid Bouzid",
-        department: "Dermatologie",
+        speciality: "Dermatologie",
         specialization: "Dermatologie cosmétique",
         degree: "MD, FAAD",
         mobile: "+212 6 56 78 90 12",
@@ -82,7 +82,7 @@ const Medecins = () => {
       },
       {
         name: "Rachida El Youssfi",
-        department: "Gastroentérologie",
+        speciality: "Gastroentérologie",
         specialization: "Hépatologie",
         degree: "MBBS, MD",
         mobile: "+212 6 67 89 01 23",
@@ -91,7 +91,7 @@ const Medecins = () => {
       },
       {
         name: "Omar Fassi",
-        department: "Oncologie",
+        speciality: "Oncologie",
         specialization: "Cancer du sein",
         degree: "MD, MS",
         mobile: "+212 6 78 90 12 34",
@@ -100,7 +100,7 @@ const Medecins = () => {
       },
       {
         name: "Nadia Benjelloun",
-        department: "Endocrinologie",
+        speciality: "Endocrinologie",
         specialization: "Diabète",
         degree: "MD, PhD",
         mobile: "+212 6 89 01 23 45",
@@ -109,7 +109,7 @@ const Medecins = () => {
       },
       {
         name: "Samir Toumi",
-        department: "Rhumatologie",
+        speciality: "Rhumatologie",
         specialization: "Arthrite",
         degree: "MBBS, MD",
         mobile: "+212 6 90 12 34 56",
@@ -118,7 +118,7 @@ const Medecins = () => {
       },
       {
         name: "Zineb El Kharraz",
-        department: "Pneumologie",
+        speciality: "Pneumologie",
         specialization: "Asthme",
         degree: "MD, MS",
         mobile: "+212 6 01 23 45 67",
@@ -127,7 +127,7 @@ const Medecins = () => {
       },
       {
         name: "Hassan El Bacha",
-        department: "Néphrologie",
+        speciality: "Néphrologie",
         specialization: "Insuffisance rénale",
         degree: "MD, PhD",
         mobile: "+212 6 12 34 56 78",
@@ -136,7 +136,7 @@ const Medecins = () => {
       },
       {
         name: "Amina El Habib",
-        department: "Ophtalmologie",
+        speciality: "Ophtalmologie",
         specialization: "Chirurgie réfractive",
         degree: "MD, MS",
         mobile: "+212 6 23 45 67 89",
@@ -145,7 +145,7 @@ const Medecins = () => {
       },
       {
         name: "Mohamed El Idrissi",
-        department: "Psychiatrie",
+        speciality: "Psychiatrie",
         specialization: "Troubles de l'humeur",
         degree: "MBBS, MD",
         mobile: "+212 6 34 56 78 90",
@@ -154,7 +154,7 @@ const Medecins = () => {
       },
       {
         name: "Sofia Bensouda",
-        department: "Gynécologie",
+        speciality: "Gynécologie",
         specialization: "Obstétrique",
         degree: "MD, MS",
         mobile: "+212 6 45 67 89 01",
@@ -163,7 +163,7 @@ const Medecins = () => {
       },
       {
         name: "Youssef El Alami",
-        department: "Chirurgie",
+        speciality: "Chirurgie",
         specialization: "Chirurgie générale",
         degree: "MD, PhD",
         mobile: "+212 6 56 78 90 12",
@@ -172,7 +172,7 @@ const Medecins = () => {
       },
       {
         name: "Jean Dupont",
-        department: "Cardiologie",
+        speciality: "Cardiologie",
         specialization: "Insuffisance cardiaque",
         degree: "MD, PhD",
         mobile: "+33 6 12 34 56 78",
@@ -181,7 +181,7 @@ const Medecins = () => {
       },
       {
         name: "Marie Lefèvre",
-        department: "Neurologie",
+        speciality: "Neurologie",
         specialization: "Épilepsie",
         degree: "MD, MS",
         mobile: "+33 6 23 45 67 89",
@@ -190,7 +190,7 @@ const Medecins = () => {
       },
       {
         name: "Alice Martin",
-        department: "Pédiatrie",
+        speciality: "Pédiatrie",
         specialization: "Néonatologie",
         degree: "MBBS, MD",
         mobile: "+33 6 34 56 78 90",
@@ -199,7 +199,7 @@ const Medecins = () => {
       },
       {
         name: "Robert Bernard",
-        department: "Orthopédie",
+        speciality: "Orthopédie",
         specialization: "Remplacement articulaire",
         degree: "MD, MS",
         mobile: "+33 6 45 67 89 01",
@@ -208,7 +208,7 @@ const Medecins = () => {
       },
       {
         name: "Catherine Dubois",
-        department: "Dermatologie",
+        speciality: "Dermatologie",
         specialization: "Dermatologie cosmétique",
         degree: "MD, FAAD",
         mobile: "+33 6 56 78 90 12",
@@ -217,7 +217,7 @@ const Medecins = () => {
       },
       {
         name: "David Moreau",
-        department: "Gastroentérologie",
+        speciality: "Gastroentérologie",
         specialization: "Hépatologie",
         degree: "MBBS, MD",
         mobile: "+33 6 67 89 01 23",
@@ -226,7 +226,7 @@ const Medecins = () => {
       },
       {
         name: "Émilie Petit",
-        department: "Oncologie",
+        speciality: "Oncologie",
         specialization: "Cancer du sein",
         degree: "MD, MS",
         mobile: "+33 6 78 90 12 34",
@@ -235,7 +235,7 @@ const Medecins = () => {
       },
       {
         name: "François Leroy",
-        department: "Endocrinologie",
+        speciality: "Endocrinologie",
         specialization: "Diabète",
         degree: "MD, PhD",
         mobile: "+33 6 89 01 23 45",
@@ -244,7 +244,7 @@ const Medecins = () => {
       },
       {
         name: "Grace Lemoine",
-        department: "Rhumatologie",
+        speciality: "Rhumatologie",
         specialization: "Arthrite",
         degree: "MBBS, MD",
         mobile: "+33 6 90 12 34 56",
@@ -253,7 +253,7 @@ const Medecins = () => {
       },
       {
         name: "Henri Marchand",
-        department: "Pneumologie",
+        speciality: "Pneumologie",
         specialization: "Asthme",
         degree: "MD, MS",
         mobile: "+33 6 01 23 45 67",
@@ -271,7 +271,7 @@ const Medecins = () => {
     const result = data.filter(
       (item) =>
         item.name.toLowerCase().includes(search.toLowerCase()) ||
-        item.department.toLowerCase().includes(search.toLowerCase()) ||
+        item.speciality.toLowerCase().includes(search.toLowerCase()) ||
         item.specialization.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredData(result);
