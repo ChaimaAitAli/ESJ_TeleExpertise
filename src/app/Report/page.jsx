@@ -53,24 +53,63 @@ const Report = () => {
               </div>
             </div>
             {/* /Page Header */}
-            <button
-              onClick={handleExport}
-              type="button"
-              className="btn btn-primary"
-            >
-              Télécharger le rapport
-            </button>
-            <CompteRendu
-              ref={componentRef}
-              title="Rapport de Télé-expertise"
-              description="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              patientName="Cristiano"
-              patientLastName="Ronaldo"
-              date="2024-07-14"
-              time="10:00 AM"
-              mainDoctor="Dr. Hicham Mi Esposa"
-              invitedDoctors={["Dr. Chaima ait ali", " Dr. Sbaiti Mohammed"]}
-            />
+            <div className="row">
+              <div className="col-md-6">
+                <div className="card">
+                  <div className="card-body">
+                    <ul className="nav nav-tabs">
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link active"
+                          href="#basictab1"
+                          data-bs-toggle="tab"
+                        >
+                          Write
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link"
+                          href="#basictab2"
+                          data-bs-toggle="tab"
+                        >
+                          Export PDF
+                        </Link>
+                      </li>
+                    </ul>
+                    <div className="tab-content">
+                      <div
+                        className="tab-pane show active"
+                        id="basictab1"
+                      ></div>
+                      <div className="tab-pane" id="basictab2">
+                        <div>
+                          <button
+                            onClick={handleExport}
+                            type="button"
+                            className="btn btn-primary"
+                          >
+                            Télécharger le rapport
+                          </button>
+
+                          <CompteRendu
+                            ref={componentRef}
+                            title="Rapport de Télé-expertise"
+                            description="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                            patientName="hicahm"
+                            patientLastName="hicham"
+                            date="2024-07-14"
+                            time="10:00 AM"
+                            mainDoctor="Dr. Hicham Mi ds"
+                            invitedDoctors={["Dr. Chaima", " Dr.  Mohammed"]}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </>
