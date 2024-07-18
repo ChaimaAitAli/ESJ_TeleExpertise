@@ -859,9 +859,7 @@ const Formulaire = () => {
                               <li>
                                 <strong>Utilisation des Données:</strong> Vos
                                 données peuvent être utilisées à des fins de
-                                recherche médicale et de développement de
-                                nouvelles thérapies, sous réserve de votre
-                                anonymat.
+                                santé publique sous réserve de votre anonymat.
                               </li>
                               <li>
                                 <strong>Durée du Consentement:</strong> Ce
