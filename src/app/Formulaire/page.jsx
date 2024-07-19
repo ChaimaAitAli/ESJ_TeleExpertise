@@ -141,6 +141,25 @@ const Formulaire = () => {
     setIsConsentChecked(!isConsentChecked);
   };
 
+  const [birthdate, setBirthdate] = useState("");
+
+  const handleBirthdateChange = (event) => {
+    setBirthdate(event.target.value);
+  };
+
+  const calculateAge = (birthdate) => {
+    const today = new Date();
+    const birthDate = new Date(birthdate);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const month = today.getMonth() - birthDate.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  };
+
+  const age = calculateAge(birthdate);
+
   return (
     <div id="root" style={{ backgroundColor: "white" }}>
       <Sidebar activeClassName="dashboard" />
@@ -221,7 +240,10 @@ const Formulaire = () => {
                             <label className="col-md-6 col-form-label">
                               Prénom du Patient
                             </label>
-                            <div className="form-group row">
+                            <div
+                              className="form-group row"
+                              style={{ marginBottom: "22px" }}
+                            >
                               <div className="col-md-9">
                                 <input type="text" className="form-control" />
                               </div>
@@ -229,7 +251,10 @@ const Formulaire = () => {
                             <label className="col-md-3 col-form-label">
                               Sexe
                             </label>
-                            <div className="form-group row">
+                            <div
+                              className="form-group row"
+                              style={{ marginBottom: "37px" }}
+                            >
                               <div className="col-md-9">
                                 <div className="form-check form-check-inline">
                                   <input
@@ -264,6 +289,14 @@ const Formulaire = () => {
                                 </div>
                               </div>
                             </div>
+                            <label className="col-md-6 col-form-label">
+                              Identifiant
+                            </label>
+                            <div className="form-group row">
+                              <div className="col-md-9">
+                                <input type="text" className="form-control" />
+                              </div>
+                            </div>
                           </div>
                           <div className="col-md-5">
                             <label className="col-md-6 col-form-label">
@@ -274,12 +307,29 @@ const Formulaire = () => {
                                 <input type="text" className="form-control" />
                               </div>
                             </div>
-                            <label className="col-md-6 col-form-label">
-                              Age du Patient
+                            <label
+                              htmlFor="birthdate"
+                              className="col-md-6 col-form-label"
+                            >
+                              Date de naissance
                             </label>
                             <div className="form-group row">
                               <div className="col-md-9">
-                                <input type="number" className="form-control" />
+                                <input
+                                  id="birthdate"
+                                  type="date"
+                                  className="form-control"
+                                  value={birthdate}
+                                  onChange={handleBirthdateChange}
+                                />
+                              </div>
+                            </div>
+                            <label className="col-md-6 col-form-label">
+                              {age < 18 ? "Code Massar" : "CIN"}
+                            </label>
+                            <div className="form-group row">
+                              <div className="col-md-9">
+                                <input type="text" className="form-control" />
                               </div>
                             </div>
                           </div>
