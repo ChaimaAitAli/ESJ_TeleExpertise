@@ -15,7 +15,6 @@ const Medecins = () => {
         Header: "Nom",
         accessor: "name",
       },
-
       {
         Header: "Spécialité",
         accessor: "speciality",
@@ -24,7 +23,6 @@ const Medecins = () => {
         Header: "Email",
         accessor: "email",
       },
-
       {
         Header: "",
         accessor: "actions",
@@ -37,228 +35,128 @@ const Medecins = () => {
     () => [
       {
         name: "Ahmed El Mansouri",
-        speciality: "Cardiologie",
-        specialization: "Insuffisance cardiaque",
-        degree: "MD, PhD",
-        mobile: "+212 6 12 34 56 78",
+        speciality: "Gynécologue",
         email: "ahmed.elmansouri@example.com",
-        joiningDate: "05.06.2021",
       },
       {
         name: "Fatima Zahra Amrani",
-        speciality: "Neurologie",
-        specialization: "Épilepsie",
-        degree: "MD, MS",
-        mobile: "+212 6 23 45 67 89",
+        speciality: "Pédiatre",
         email: "fatima.amrani@example.com",
-        joiningDate: "12.03.2020",
       },
       {
         name: "Ali Benchekroun",
-        speciality: "Pédiatrie",
-        specialization: "Néonatologie",
-        degree: "MBBS, MD",
-        mobile: "+212 6 34 56 78 90",
+        speciality: "Dermatologue",
         email: "ali.benchekroun@example.com",
-        joiningDate: "20.08.2019",
       },
       {
         name: "Leila El Haddad",
-        speciality: "Orthopédie",
-        specialization: "Remplacement articulaire",
-        degree: "MD, MS",
-        mobile: "+212 6 45 67 89 01",
+        speciality: "Ophtalmologue",
         email: "leila.elhaddad@example.com",
-        joiningDate: "15.01.2018",
       },
       {
         name: "Khalid Bouzid",
-        speciality: "Dermatologie",
-        specialization: "Dermatologie cosmétique",
-        degree: "MD, FAAD",
-        mobile: "+212 6 56 78 90 12",
+        speciality: "Pédiatre",
         email: "khalid.bouzid@example.com",
-        joiningDate: "10.04.2022",
       },
       {
         name: "Rachida El Youssfi",
-        speciality: "Gastroentérologie",
-        specialization: "Hépatologie",
-        degree: "MBBS, MD",
-        mobile: "+212 6 67 89 01 23",
+        speciality: "Psychiatre",
         email: "rachida.elyoussfi@example.com",
-        joiningDate: "25.11.2017",
       },
       {
         name: "Omar Fassi",
-        speciality: "Oncologie",
-        specialization: "Cancer du sein",
-        degree: "MD, MS",
-        mobile: "+212 6 78 90 12 34",
+        speciality: "Gynécologue",
         email: "omar.fassi@example.com",
-        joiningDate: "30.09.2020",
       },
       {
         name: "Nadia Benjelloun",
-        speciality: "Endocrinologie",
-        specialization: "Diabète",
-        degree: "MD, PhD",
-        mobile: "+212 6 89 01 23 45",
+        speciality: "Dermatologue",
         email: "nadia.benjelloun@example.com",
-        joiningDate: "18.07.2019",
       },
       {
         name: "Samir Toumi",
-        speciality: "Rhumatologie",
-        specialization: "Arthrite",
-        degree: "MBBS, MD",
-        mobile: "+212 6 90 12 34 56",
+        speciality: "Psychiatre",
         email: "samir.toumi@example.com",
-        joiningDate: "22.02.2018",
       },
       {
         name: "Zineb El Kharraz",
-        speciality: "Pneumologie",
-        specialization: "Asthme",
-        degree: "MD, MS",
-        mobile: "+212 6 01 23 45 67",
+        speciality: "Medecin Généraliste",
         email: "zineb.elkharraz@example.com",
-        joiningDate: "14.11.2021",
       },
       {
         name: "Hassan El Bacha",
-        speciality: "Néphrologie",
-        specialization: "Insuffisance rénale",
-        degree: "MD, PhD",
-        mobile: "+212 6 12 34 56 78",
+        speciality: "Ophtalmologue",
         email: "hassan.elbacha@example.com",
-        joiningDate: "03.05.2020",
       },
       {
         name: "Amina El Habib",
-        speciality: "Ophtalmologie",
-        specialization: "Chirurgie réfractive",
-        degree: "MD, MS",
-        mobile: "+212 6 23 45 67 89",
+        speciality: "Dermatologue",
         email: "amina.elhabib@example.com",
-        joiningDate: "17.06.2019",
       },
       {
         name: "Mohamed El Idrissi",
-        speciality: "Psychiatrie",
-        specialization: "Troubles de l'humeur",
-        degree: "MBBS, MD",
-        mobile: "+212 6 34 56 78 90",
+        speciality: "Medecin Généraliste",
         email: "mohamed.elidrissi@example.com",
-        joiningDate: "01.02.2021",
       },
       {
         name: "Sofia Bensouda",
-        speciality: "Gynécologie",
-        specialization: "Obstétrique",
-        degree: "MD, MS",
-        mobile: "+212 6 45 67 89 01",
+        speciality: "Gynécologue",
         email: "sofia.bensouda@example.com",
-        joiningDate: "11.07.2018",
       },
       {
         name: "Youssef El Alami",
-        speciality: "Chirurgie",
-        specialization: "Chirurgie générale",
-        degree: "MD, PhD",
-        mobile: "+212 6 56 78 90 12",
+        speciality: "Ophtalmologue",
         email: "youssef.elalami@example.com",
-        joiningDate: "28.09.2020",
       },
       {
         name: "Jean Dupont",
-        speciality: "Cardiologie",
-        specialization: "Insuffisance cardiaque",
-        degree: "MD, PhD",
-        mobile: "+33 6 12 34 56 78",
+        speciality: "Pédiatre",
         email: "jean.dupont@example.com",
-        joiningDate: "05.06.2021",
       },
       {
         name: "Marie Lefèvre",
-        speciality: "Neurologie",
-        specialization: "Épilepsie",
-        degree: "MD, MS",
-        mobile: "+33 6 23 45 67 89",
+        speciality: "Dermatologue",
         email: "marie.lefevre@example.com",
-        joiningDate: "12.03.2020",
       },
       {
         name: "Alice Martin",
-        speciality: "Pédiatrie",
-        specialization: "Néonatologie",
-        degree: "MBBS, MD",
-        mobile: "+33 6 34 56 78 90",
+        speciality: "Psychiatre",
         email: "alice.martin@example.com",
-        joiningDate: "20.08.2019",
       },
       {
         name: "Robert Bernard",
-        speciality: "Orthopédie",
-        specialization: "Remplacement articulaire",
-        degree: "MD, MS",
-        mobile: "+33 6 45 67 89 01",
+        speciality: "Medecin Généraliste",
         email: "robert.bernard@example.com",
-        joiningDate: "15.01.2018",
       },
       {
         name: "Catherine Dubois",
-        speciality: "Dermatologie",
-        specialization: "Dermatologie cosmétique",
-        degree: "MD, FAAD",
-        mobile: "+33 6 56 78 90 12",
+        speciality: "Ophtalmologue",
         email: "catherine.dubois@example.com",
-        joiningDate: "10.04.2022",
       },
       {
         name: "David Moreau",
-        speciality: "Gastroentérologie",
-        specialization: "Hépatologie",
-        degree: "MBBS, MD",
-        mobile: "+33 6 67 89 01 23",
+        speciality: "Dermatologue",
         email: "david.moreau@example.com",
-        joiningDate: "25.11.2017",
       },
       {
         name: "Émilie Petit",
-        speciality: "Oncologie",
-        specialization: "Cancer du sein",
-        degree: "MD, MS",
-        mobile: "+33 6 78 90 12 34",
+        speciality: "Gynécologue",
         email: "emilie.petit@example.com",
-        joiningDate: "30.09.2020",
       },
       {
         name: "François Leroy",
-        speciality: "Endocrinologie",
-        specialization: "Diabète",
-        degree: "MD, PhD",
-        mobile: "+33 6 89 01 23 45",
+        speciality: "Pédiatre",
         email: "francois.leroy@example.com",
-        joiningDate: "18.07.2019",
       },
       {
         name: "Grace Lemoine",
-        speciality: "Rhumatologie",
-        specialization: "Arthrite",
-        degree: "MBBS, MD",
-        mobile: "+33 6 90 12 34 56",
+        speciality: "Medecin Généraliste",
         email: "grace.lemoine@example.com",
-        joiningDate: "22.02.2018",
       },
       {
         name: "Henri Marchand",
-        speciality: "Pneumologie",
-        specialization: "Asthme",
-        degree: "MD, MS",
-        mobile: "+33 6 01 23 45 67",
+        speciality: "Ophtalmologue",
         email: "henri.marchand@example.com",
-        joiningDate: "14.11.2021",
       },
     ],
     []
@@ -266,20 +164,27 @@ const Medecins = () => {
 
   const [filteredData, setFilteredData] = useState(data);
   const [search, setSearch] = useState("");
+  const [selectedspeciality, setSelectedspeciality] = useState("");
 
   useEffect(() => {
     const result = data.filter(
       (item) =>
-        item.name.toLowerCase().includes(search.toLowerCase()) ||
-        item.speciality.toLowerCase().includes(search.toLowerCase()) ||
-        item.specialization.toLowerCase().includes(search.toLowerCase())
+        item.name.toLowerCase().includes(search.toLowerCase()) &&
+        (selectedspeciality
+          ? item.speciality.toLowerCase() === selectedspeciality.toLowerCase()
+          : true)
     );
     setFilteredData(result);
-  }, [search]);
+  }, [search, selectedspeciality, data]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
+
+  const handlespecialityChange = (e) => {
+    setSelectedspeciality(e.target.value);
+  };
+
   return (
     <>
       <Sidebar activeClassName="doctors" />
@@ -320,13 +225,40 @@ const Medecins = () => {
                                     type="text"
                                     value={search}
                                     onChange={handleSearch}
-                                    className="form-control"
-                                    placeholder="chercher ici"
+                                    className="form-control common-style input-style"
+                                    placeholder="Rechercher un nom"
                                   />
                                   <div className="btn">
                                     <Image src={searchnormal} alt="#" />
                                   </div>
                                 </form>
+                              </div>
+                              <div className="speciality-dropdown table-search-blk">
+                                <select
+                                  value={selectedspeciality}
+                                  onChange={handlespecialityChange}
+                                  className="form-control common-style dropdown-style"
+                                >
+                                  <option value="">
+                                    Toutes les spécialités
+                                  </option>
+                                  <option value="Pédiatre">Pédiatre</option>
+                                  <option value="Psychiatre">
+                                    Psychiatre
+                                  </option>
+                                  <option value="Gynécologue">
+                                    Gynécologue
+                                  </option>
+                                  <option value="Dermatologue">
+                                    Dermatologue
+                                  </option>
+                                  <option value="Ophtalmologue">
+                                    Ophtalmologue
+                                  </option>
+                                  <option value="Medecin Généraliste">
+                                    Medecin Généraliste
+                                  </option>
+                                </select>
                               </div>
                               {/* <div className="add-group">
                                 <Link

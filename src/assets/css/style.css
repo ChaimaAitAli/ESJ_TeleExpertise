@@ -6279,6 +6279,13 @@ a.btn.add-links:hover {
 /*-----------------
 	25. Doctors
 -----------------------*/
+.d-flex {
+  margin-left: 40px;
+}
+.speciality-dropdown{
+  margin-left: 40px;
+  
+}
 
 .doctor-img {
   cursor: pointer;
@@ -6349,6 +6356,7 @@ a.btn.add-links:hover {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-left: 60px;
 }
 .doctor-search-blk .top-nav-search {
   margin-left: 15px;
@@ -6356,15 +6364,15 @@ a.btn.add-links:hover {
 .doctor-search-blk .top-nav-search form {
   margin: 0px;
 }
-.add-group {
+/* .add-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-.add-group .btn-primary {
+} */
+/* .add-group .btn-primary {
   background: rgba(46, 55, 164, 0.05);
   border-radius: 12px;
   color: #2e37a4;
@@ -6384,8 +6392,8 @@ a.btn.add-links:hover {
   justify-content: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-}
-.add-group .btn-primary:hover {
+} */
+/* .add-group .btn-primary:hover {
   border: 0;
   background: #2e37a4;
   transition: all 0.5s ease;
@@ -6393,15 +6401,15 @@ a.btn.add-links:hover {
   -o-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-}
-.add-group .btn-primary:hover img {
+} */
+/* .add-group .btn-primary:hover img {
   filter: invert(1) brightness(100);
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-}
+} */
 .table.comman-table > thead > tr > th,
 .table.comman-table > tbody > tr > td {
   padding: 15px 15px;
