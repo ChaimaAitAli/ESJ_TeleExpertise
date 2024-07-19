@@ -7,10 +7,21 @@ const PrintableComponent = React.forwardRef((props, ref) => {
     patientName,
     patientLastName,
     patientDOB,
-    date,
-    time,
-    mainDoctor,
-    invitedDoctors,
+    patientID,
+    patientCIN,
+    patientMassar,
+    caseCreation,
+    caseClosure,
+    requestingDoctorName,
+    requestingDoctorLastName,
+    requestingDoctorWorkplace,
+    requestingDoctorSpecialty,
+    consultedDoctorName,
+    consultedDoctorLastName,
+    consultedDoctorWorkplace,
+    consultedDoctorSpecialty,
+    discussion,
+    conclusion,
   } = props;
 
   return (
@@ -89,7 +100,7 @@ const PrintableComponent = React.forwardRef((props, ref) => {
           </div>
         </div>
         <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-          Informations sur le patient
+          Informations du Patient
         </h2>
         <table
           style={{
@@ -110,8 +121,22 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                 Nom
               </td>
               <td style={{ border: "1px solid #ccc", padding: "8px" }}>
-                {patientName} {patientLastName}
+                {patientName}
               </td>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Prénom
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {patientLastName}
+              </td>
+            </tr>
+            <tr>
               <td
                 style={{
                   border: "1px solid #ccc",
@@ -124,8 +149,6 @@ const PrintableComponent = React.forwardRef((props, ref) => {
               <td style={{ border: "1px solid #ccc", padding: "8px" }}>
                 {patientDOB}
               </td>
-            </tr>
-            <tr>
               <td
                 style={{
                   border: "1px solid #ccc",
@@ -133,22 +156,10 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                   backgroundColor: "#f5f5f5",
                 }}
               >
-                Date de la télé-expertise
+                Identifiant
               </td>
               <td style={{ border: "1px solid #ccc", padding: "8px" }}>
-                {date}
-              </td>
-              <td
-                style={{
-                  border: "1px solid #ccc",
-                  padding: "8px",
-                  backgroundColor: "#f5f5f5",
-                }}
-              >
-                Heure
-              </td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
-                {time}
+                {patientID}
               </td>
             </tr>
             <tr>
@@ -159,10 +170,10 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                   backgroundColor: "#f5f5f5",
                 }}
               >
-                Médecin Principal
+                CIN
               </td>
               <td style={{ border: "1px solid #ccc", padding: "8px" }}>
-                {mainDoctor}
+                {patientCIN}
               </td>
               <td
                 style={{
@@ -171,54 +182,180 @@ const PrintableComponent = React.forwardRef((props, ref) => {
                   backgroundColor: "#f5f5f5",
                 }}
               >
-                Médecins Invités
+                Code Massar
               </td>
               <td style={{ border: "1px solid #ccc", padding: "8px" }}>
-                {invitedDoctors.join(", ")}
+                {patientMassar}
+              </td>
+            </tr>
+            <tr>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Création de cas
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {caseCreation}
+              </td>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Clôture de cas
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {caseClosure}
               </td>
             </tr>
           </tbody>
         </table>
         <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-          Description du Cas
+          Description clinique
         </h2>
         <p style={{ marginBottom: "20px" }}>{description}</p>
         <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-          Recommandations
+          Médecin requérant
         </h2>
-        <p style={{ marginBottom: "20px" }}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum eius
-          ipsum quisquam officiis, vero exercitationem quaerat corporis.
-          Dignissimos itaque aperiam, aliquid aut perspiciatis distinctio
-          possimus, fugiat consectetur nemo quo quam.
-        </p>
-        <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-          Notes Supplémentaires
-        </h2>
-        <p style={{ marginBottom: "20px" }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          natus ipsa voluptate dolorem. Animi optio velit voluptatibus dolores
-          ducimus necessitatibus quod est qui facilis, nostrum praesentium ea
-          enim recusandae modi.
-        </p>
-        <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
-          Discussion et Conclusion
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quo eum
-          iure nam tenetur porro molestiae atque voluptatem corporis quas! Illo
-          sed cupiditate alias autem eveniet? Pariatur sed repudiandae alias
-          repellat.
-        </p>
-        <div
+        <table
           style={{
-            textAlign: "center",
-            marginTop: "30px",
-            fontSize: "10pt",
-            color: "#888",
+            width: "100%",
+            borderCollapse: "collapse",
+            marginBottom: "20px",
           }}
-        ></div>
+        >
+          <tbody>
+            <tr>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Nom
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {requestingDoctorName}
+              </td>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Prénom
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {requestingDoctorLastName}
+              </td>
+            </tr>
+            <tr>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Lieu de travail
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {requestingDoctorWorkplace}
+              </td>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Spécialité
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {requestingDoctorSpecialty}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
+          Médecin sollicité
+        </h2>
+        <table
+          style={{
+            width: "100%",
+            borderCollapse: "collapse",
+            marginBottom: "20px",
+          }}
+        >
+          <tbody>
+            <tr>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Nom
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {consultedDoctorName}
+              </td>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Prénom
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {consultedDoctorLastName}
+              </td>
+            </tr>
+            <tr>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Lieu de travail
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {consultedDoctorWorkplace}
+              </td>
+              <td
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "8px",
+                  backgroundColor: "#f5f5f5",
+                }}
+              >
+                Spécialité
+              </td>
+              <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                {consultedDoctorSpecialty}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>Discussion</h2>
+        <p style={{ marginBottom: "20px" }}>{discussion}</p>
+        <h2 style={{ fontSize: "14pt", marginBottom: "10px" }}>
+          Conclusion et recommandation
+        </h2>
+        <p style={{ marginBottom: "20px" }}>{conclusion}</p>
       </div>
     </div>
   );
