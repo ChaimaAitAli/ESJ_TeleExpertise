@@ -77,7 +77,7 @@ const Report = () => {
                     <li className="breadcrumb-item">
                       <FeatherIcon icon="chevron-right" />
                     </li>
-                    <li className="breadcrumb-item active">CompteRendu</li>
+                    <li className="breadcrumb-item active">Compte Rendu</li>
                   </ul>
                 </div>
               </div>
