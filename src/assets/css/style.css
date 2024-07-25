@@ -6282,9 +6282,8 @@ a.btn.add-links:hover {
 .d-flex {
   margin-left: 40px;
 }
-.speciality-dropdown{
+.speciality-dropdown {
   margin-left: 40px;
-  
 }
 
 .doctor-img {
@@ -11603,4 +11602,8 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   .form-row {
     flex-direction: column;
   }
+}
+.hid {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }

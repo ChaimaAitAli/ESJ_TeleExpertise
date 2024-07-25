@@ -110,7 +110,7 @@ const AppelVideo = () => {
         {/*Page Header*/}
         <div className="row">
           <div
-            className="col-xl-4 d-flex"
+            className="col-xl-4"
             style={{
               backgroundColor: "white",
               borderRadius: "30px",
