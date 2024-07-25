@@ -110,7 +110,7 @@ const AppelVideo = () => {
         {/*Page Header*/}
         <div className="row">
           <div
-            className="col-xl-4"
+            className="col-xl-3"
             style={{
               backgroundColor: "white",
               borderRadius: "30px",
@@ -120,6 +120,7 @@ const AppelVideo = () => {
               maxHeight: "900px",
               overflowY: "auto",
               marginBottom: "20px",
+              marginLeft: "50px",
             }}
           >
             <div className="DiscussionTitle">{discussion.Titre}</div>

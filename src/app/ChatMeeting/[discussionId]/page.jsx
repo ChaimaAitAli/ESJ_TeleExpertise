@@ -120,7 +120,7 @@ const ChatMeeting = ({ params }) => {
         </div>
         <div className="row">
           <div
-            className="col-xl-4"
+            className="col-xl-3"
             style={{
               backgroundColor: "white",
               borderRadius: "30px",
@@ -130,6 +130,7 @@ const ChatMeeting = ({ params }) => {
               maxHeight: "530px",
               overflowY: "auto",
               marginBottom: "20px",
+              marginLeft: "50px",
             }}
           >
             <div className="DiscussionTitle">{discussion.Titre}</div>

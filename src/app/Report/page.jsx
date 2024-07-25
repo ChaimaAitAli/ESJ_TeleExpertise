@@ -88,7 +88,7 @@ const Report = () => {
             </div>
             {/* /Page Header */}
             <div className="row justify-content-center">
-              <div className="col-md-8">
+              <div className="col-md-8 mx-auto">
                 <div className="card">
                   <div className="card-body">
                     {!isReportReady && (
