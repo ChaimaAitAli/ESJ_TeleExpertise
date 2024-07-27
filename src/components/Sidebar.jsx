@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import "@assets/css/font-awesome.min.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +8,10 @@ import { dashboard, doctor, logout, menuicon10, menuicon08 } from "./imagepath";
 import Scrollbars from "react-custom-scrollbars-2";
 
 const Sidebar = (props) => {
+  useEffect(() => {
+    // Load Bootstrap JS only on the client side
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
   const [sidebar, setSidebar] = useState("");
 
   const expandMenu = () => {
