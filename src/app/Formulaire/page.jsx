@@ -11,7 +11,31 @@ import DoctorSelectionForm from "@components/DoctorSelectionForm";
 
 const Formulaire = () => {
   const [isConsentChecked, setIsConsentChecked] = useState(false);
-  const [selectedHour, setSelectedHour] = useState(null);
+  const [date, setDate] = useState(null);
+  const [time, setTime] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedHabitudes, setSelectedHabitudes] = useState([]);
+  const [selectedMotifTele, setSelectedMotifTele] = useState([]);
+  const [selectedMedicaux, setSelectedMedicaux] = useState([]);
+  const [selectedFamiliaux, setSelectedFamiliaux] = useState([]);
+
+  const [prenom, setPrenom] = useState("");
+  const [nom, setNom] = useState("");
+  const [sexe, setSexe] = useState("");
+  const [identifiant, setIdentifiant] = useState("");
+  const [cin, setCin] = useState("");
+  const [birthdate, setBirthdate] = useState("");
+  const [autreMotifTele, setAutreMotiftele] = useState("");
+  const [autreMedicaux, setAutreMedicaux] = useState("");
+  const [detailsHabitudes, setDetailsHabitudes] = useState("");
+  const [autreFamiliaux, setAutrFamiliaux] = useState("");
+  const [Chirurgicaux, setChirurgicaux] = useState("");
+  const [Description, setDescription] = useState("");
+  const [titre, setTitre] = useState("");
+  const [MotifDiscussion, setMotifDiscusion] = useState("");
+  const [CommentaireFichiers, setCommentaireFichiers] = useState("");
+
   const disabledDate = (current) => {
     if (!current || !current.isValid()) {
       return false;
@@ -33,13 +57,6 @@ const Formulaire = () => {
     }
     return hours;
   };
-
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  const [selectedHabitudes, setSelectedHabitudes] = useState([]);
-  const [selectedMotifTele, setSelectedMotifTele] = useState([]);
-  const [selectedMedicaux, setSelectedMedicaux] = useState([]);
-  const [selectedFamiliaux, setSelectedFamiliaux] = useState([]);
   const showMoreInfoMedicaux = selectedMedicaux.some(
     (option) => option.value === 7
   );
@@ -140,8 +157,6 @@ const Formulaire = () => {
   const handleCheckboxChange = () => {
     setIsConsentChecked(!isConsentChecked);
   };
-
-  const [birthdate, setBirthdate] = useState("");
 
   const handleBirthdateChange = (event) => {
     setBirthdate(event.target.value);
@@ -245,7 +260,12 @@ const Formulaire = () => {
                               style={{ marginBottom: "22px" }}
                             >
                               <div className="col-md-9">
-                                <input type="text" className="form-control" />
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  value={prenom}
+                                  onChange={(e) => setPrenom(e.target.value)}
+                                />
                               </div>
                             </div>
                             <label className="col-md-3 col-form-label">
@@ -262,14 +282,15 @@ const Formulaire = () => {
                                     type="radio"
                                     name="gender"
                                     id="gender_male"
-                                    defaultValue="option1"
-                                    defaultChecked=""
+                                    value="Homme"
+                                    checked={sexe === "Homme"}
+                                    onChange={() => setSexe("Homme")}
                                   />
                                   <label
                                     className="form-check-label"
                                     htmlFor="gender_male"
                                   >
-                                    Male
+                                    Homme
                                   </label>
                                 </div>
                                 <div className="form-check form-check-inline">
@@ -278,13 +299,15 @@ const Formulaire = () => {
                                     type="radio"
                                     name="gender"
                                     id="gender_female"
-                                    defaultValue="option2"
+                                    value="Femme"
+                                    checked={sexe === "Femme"}
+                                    onChange={() => setSexe("Femme")}
                                   />
                                   <label
                                     className="form-check-label"
                                     htmlFor="gender_female"
                                   >
-                                    Femelle
+                                    Femme
                                   </label>
                                 </div>
                               </div>
@@ -294,7 +317,14 @@ const Formulaire = () => {
                             </label>
                             <div className="form-group row">
                               <div className="col-md-9">
-                                <input type="text" className="form-control" />
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  value={identifiant}
+                                  onChange={(e) =>
+                                    setIdentifiant(e.target.value)
+                                  }
+                                />
                               </div>
                             </div>
                           </div>
@@ -304,7 +334,12 @@ const Formulaire = () => {
                             </label>
                             <div className="form-group row">
                               <div className="col-md-9">
-                                <input type="text" className="form-control" />
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  value={nom}
+                                  onChange={(e) => setNom(e.target.value)}
+                                />
                               </div>
                             </div>
                             <label
@@ -325,11 +360,16 @@ const Formulaire = () => {
                               </div>
                             </div>
                             <label className="col-md-6 col-form-label">
-                              {age < 18 ? "Code Massar" : "CIN"}
+                              {age < 16 ? "Code Massar" : "CIN"}
                             </label>
                             <div className="form-group row">
                               <div className="col-md-9">
-                                <input type="text" className="form-control" />
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  value={cin}
+                                  onChange={(e) => setCin(e.target.value)}
+                                />
                               </div>
                             </div>
                           </div>
@@ -345,7 +385,7 @@ const Formulaire = () => {
                             >
                               <Select
                                 isMulti
-                                defaultValue={selectedMotifTele}
+                                value={selectedMotifTele}
                                 onChange={setSelectedMotifTele}
                                 options={MotifTele}
                               />
@@ -356,6 +396,10 @@ const Formulaire = () => {
                                   id="more info motif"
                                   type="text"
                                   className="form-control"
+                                  value={autreMotifTele}
+                                  onChange={(e) =>
+                                    setAutreMotiftele(e.target.value)
+                                  }
                                   placeholder="Merci de fournir plus de Détails sur le motif."
                                 ></input>
                               </div>
@@ -383,7 +427,7 @@ const Formulaire = () => {
                             >
                               <Select
                                 isMulti
-                                defaultValue={selectedMedicaux}
+                                value={selectedMedicaux}
                                 onChange={setSelectedMedicaux}
                                 options={Medicaux}
                                 style={{ marginBottom: "10px" }}
@@ -396,6 +440,10 @@ const Formulaire = () => {
                                   type="text"
                                   className="form-control"
                                   placeholder="Merci de fournir plus de Détails sur les antécédents medicaux."
+                                  value={autreMedicaux}
+                                  onChange={(e) =>
+                                    setAutreMedicaux(e.target.value)
+                                  }
                                 ></input>
                               </div>
                             )}
@@ -409,19 +457,15 @@ const Formulaire = () => {
                             2-Chirurgicaux
                           </label>
                           <div className="form-group row">
-                            {/*<div className="custom-width-11-5">
-                              <Select
-                                defaultValue={selectedOption}
-                                onChange={setSelectedOption}
-                                options={Chirurgicaux}
-                                style={{ marginBottom: "10px" }}
-                              />
-                            </div>*/}
                             <div className="custom-width-11-5">
                               <input
                                 type="text"
                                 className="form-control"
                                 placeholder="Merci de fournir les types et les années des chirurgies du patient, le cas échéant."
+                                value={Chirurgicaux}
+                                onChange={(e) =>
+                                  setChirurgicaux(e.target.value)
+                                }
                               ></input>
                             </div>
                           </div>
@@ -437,7 +481,7 @@ const Formulaire = () => {
                             <div className="custom-width-11-5">
                               <Select
                                 isMulti
-                                defaultValue={selectedHabitudes}
+                                value={selectedHabitudes}
                                 onChange={setSelectedHabitudes}
                                 options={Habitudes}
                                 style={{ marginBottom: "10px" }}
@@ -454,6 +498,10 @@ const Formulaire = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Merci de fournir plus de Détails sur les habitudes sélectionnées."
+                                value={detailsHabitudes}
+                                onChange={(e) =>
+                                  setDetailsHabitudes(e.target.value)
+                                }
                               ></input>
                             </div>
                           )}
@@ -469,7 +517,7 @@ const Formulaire = () => {
                             >
                               <Select
                                 isMulti
-                                defaultValue={selectedFamiliaux}
+                                value={selectedFamiliaux}
                                 onChange={setSelectedFamiliaux}
                                 options={Familiaux}
                                 style={{ marginBottom: "10px" }}
@@ -482,6 +530,10 @@ const Formulaire = () => {
                                   type="text"
                                   className="form-control"
                                   placeholder="Merci de fournir plus de Détails sur les antécédents familiaux."
+                                  value={autreFamiliaux}
+                                  onChange={(e) =>
+                                    setAutrFamiliaux(e.target.value)
+                                  }
                                 ></input>
                               </div>
                             )}
@@ -500,6 +552,8 @@ const Formulaire = () => {
                                 className="form-control"
                                 placeholder="Description"
                                 defaultValue={""}
+                                value={Description}
+                                onChange={(e) => setDescription(e.target.value)}
                               />
                             </div>
                           </div>
@@ -514,6 +568,8 @@ const Formulaire = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Donnez la raison de la TéléExpertise en une phrase"
+                                value={titre}
+                                onChange={(e) => setTitre(e.target.value)}
                               />
                             </div>
                           </div>
@@ -530,6 +586,10 @@ const Formulaire = () => {
                                 className="form-control"
                                 placeholder="Posez 2 ou 3 questions qui seront l'objet de la TéléExpertise"
                                 defaultValue={""}
+                                value={MotifDiscussion}
+                                onChange={(e) =>
+                                  setMotifDiscusion(e.target.value)
+                                }
                               />
                             </div>
                           </div>
@@ -586,6 +646,10 @@ const Formulaire = () => {
                                 className="form-control"
                                 placeholder="Commentaires"
                                 defaultValue={""}
+                                value={CommentaireFichiers}
+                                onChange={(e) =>
+                                  setCommentaireFichiers(e.target.value)
+                                }
                               />
                             </div>
                           </div>
@@ -699,7 +763,7 @@ const Formulaire = () => {
                             <div className="form-group row">
                               <div className="col-md-12">
                                 <Select
-                                  defaultValue={selectedOption}
+                                  value={selectedOption}
                                   onChange={setSelectedOption}
                                   options={TypeDiscussion}
                                 />
@@ -718,6 +782,10 @@ const Formulaire = () => {
                                       <DatePicker
                                         className="form-control"
                                         disabledDate={disabledDate}
+                                        value={date}
+                                        onChange={(e) =>
+                                          setBirthdate(e.target.value)
+                                        }
                                       />
                                     </Form.Item>
                                     <Form.Item
@@ -729,6 +797,10 @@ const Formulaire = () => {
                                         use12Hours
                                         format="h:mm a"
                                         disabledHours={disabledHours}
+                                        value={time}
+                                        onChange={(e) =>
+                                          setTime(e.target.value)
+                                        }
                                       />
                                     </Form.Item>
                                   </div>
@@ -772,7 +844,7 @@ const Formulaire = () => {
                               <div className="col-md-12">
                                 <Select
                                   isMulti
-                                  defaultValue={selectedOptions}
+                                  value={selectedOptions}
                                   onChange={setSelectedOptions}
                                   options={Specialites}
                                 />
@@ -786,7 +858,7 @@ const Formulaire = () => {
                             <div className="form-group row">
                               <div className="col-md-12">
                                 <Select
-                                  defaultValue={selectedOption}
+                                  value={selectedOption}
                                   onChange={setSelectedOption}
                                   options={TypeDiscussion}
                                 />
@@ -805,6 +877,10 @@ const Formulaire = () => {
                                       <DatePicker
                                         className="form-control"
                                         disabledDate={disabledDate}
+                                        value={date}
+                                        onChange={(e) =>
+                                          setDate(e.target.value)
+                                        }
                                       />
                                     </Form.Item>
                                     <Form.Item
@@ -816,6 +892,10 @@ const Formulaire = () => {
                                         use12Hours
                                         format="h:mm a"
                                         disabledHours={disabledHours}
+                                        value={time}
+                                        onChange={(e) =>
+                                          setTime(e.target.value)
+                                        }
                                       />
                                     </Form.Item>
                                   </div>
